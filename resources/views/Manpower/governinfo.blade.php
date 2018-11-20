@@ -13,20 +13,27 @@
             </div> -->
 
 
+
+        
+<?php
+function current_page($uri = "/") {
+    return strstr(request()->path(), $uri);
+}
+?>
  
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-10"><h1>Chris Jim Egot</h1></div>
-        <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" style="size:100px;" src="http://www.gravatar.com/avata?s=100"></a></div>
-    </div>
+<!--         <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" style="size:100px;" src="http://www.gravatar.com/avata?s=100"></a></div>
+ -->    </div>
     <div class="row">
         <div class="col-sm-3"><!--left col-->
               
 
       <div class="text-center">
-        <img src="avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block file-upload">
+        <img src="/defaultimage.png" class="avatar img-circle img-thumbnail" alt="avatar">
+ <!--        <h6>Upload a different photo...</h6>
+        <input type="file" class="text-center center-block file-upload"> -->
       </div></hr><br>
 
                
@@ -36,13 +43,13 @@
           </div>
           
           
-          <ul class="list-group">
+<!--           <ul class="list-group">
             <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
-          </ul> 
+          </ul>  -->
                
           <div class="panel panel-default">
             <div class="panel-heading">Social Media</div>
@@ -54,10 +61,13 @@
         </div><!--/col-3-->
         <div class="col-sm-9">
              <ul class="nav nav-tabs">
-                <li><a href="personalinfo">Personal Info</a></li>
-                <li><a href="educationinfo">Educational Info</a></li>
-                <li class="active"><a href="governinfo">Government Info</a></li>
-                <li><a href="companyinfo">Company Info</a></li>
+
+                <li {{ (current_page("personalinfo")) ? 'class=active' : '' }}><a href="{{ url('/personalinfo')}}/{{$person->id}}">Basic Info</a></li>
+               
+                <li {{ (current_page("educationinfo")) ? 'class=active' : '' }}><a href="{{ url('/educationinfo')}}/{{$person->id}}">Educational Info</a></li>
+              
+                <li {{ (current_page("governinfo")) ? 'class=active' : '' }}><a href="{{ url('/governinfo')}}/{{$person->id}}">Government Info</a></li>
+ 
               </ul>
 
                   <hr>
@@ -93,13 +103,13 @@
                       </div>
                       
                         
-                      <div class="form-group">
+              <!--         <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
                                 <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                             </div>
-                      </div>
+                      </div> -->
                 </form>
               </div>
                
@@ -110,8 +120,6 @@
     </div><!--/row-->
                                                       
 
-
- 
 @endsection
 
 

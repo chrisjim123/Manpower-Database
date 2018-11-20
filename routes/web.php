@@ -25,9 +25,8 @@ Route::get('/addmanpower', 'ManpowerController@addmanpower')->middleware('authen
 Auth::routes();
 Route::get('/personalinfo/{id}', 'ManpowerController@personalinfo')->middleware('authenticated');
 Auth::routes();
-Route::get('/personalinfo/educationinfo/{id}', 'ManpowerController@educationinfo')->middleware('authenticated');
+Route::get('/educationinfo/{id}', 'ManpowerController@educationinfo')->middleware('authenticated');
 Auth::routes();	
-Route::get('/governinfo', 'ManpowerController@governinfo')->middleware('authenticated');
-Auth::routes();
-Route::get('/companyinfo', 'ManpowerController@companyinfo')->middleware('authenticated');
+Route::get('/governinfo/{id}', 'ManpowerController@governinfo')->middleware('authenticated');
+
 //	

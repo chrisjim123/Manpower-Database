@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
-
+ 
 
 
 </head>
@@ -97,6 +97,7 @@
         </nav>
 
         <main class="py-4">
+
             @yield('content')
         </main>
     </div>

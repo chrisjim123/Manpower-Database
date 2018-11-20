@@ -40,15 +40,16 @@ class ManpowerController extends Controller
 
     }
 
-    public function governinfo()
+    public function governinfo($id)
     {
-    	return view('manpower/governinfo');
+        $person =DB::table('manpower')->find($id);
+        if ($person == true) {
+            return view('manpower.governinfo', compact('person'));
+        }else{
+             return redirect('/home');
+        }
     }
 
-     public function companyinfo()
-    {
-    	return view('manpower/companyinfo');
-    }
 
 
 }

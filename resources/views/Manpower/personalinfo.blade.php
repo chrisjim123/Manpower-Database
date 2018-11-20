@@ -11,13 +11,18 @@
                     @endif
 
             </div> -->
+        
+<?php
+function current_page($uri = "/") {
+    return strstr(request()->path(), $uri);
+}
+?>
 
 
  
 <div class="container bootstrap snippet">
 
-<a href="educationinfo/{{$person->id}}">Educational</a>
-
+ 
     <div class="row">
         <div class="col-sm-10"><h1>{{$person->firstname}} {{$person->lastname}}</h1></div>
     <!--     <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" style="size:100px;" src="http://www.gravatar.com/avata?s=100"></a></div>
@@ -57,10 +62,13 @@
         </div><!--/col-3-->
         <div class="col-sm-9">
              <ul class="nav nav-tabs">
-                <li class="active"><a href="personalinfo/{{$person->id}}">Personal Info</a></li>
-                <li><a href="educationinfo/{{$person->id}}">Educational Info</a></li>
-                <li><a href="governinfo/{{$person->id}}">Government Info</a></li>
-                <li><a href="companyinfo/{{$person->id}}">Company Info</a></li>
+
+                <li {{ (current_page("personalinfo")) ? 'class=active' : '' }}><a href="{{ url('/personalinfo')}}/{{$person->id}}">Basic Info</a></li>
+               
+                <li {{ (current_page("educationinfo")) ? 'class=active' : '' }}><a href="{{ url('/educationinfo')}}/{{$person->id}}">Educational Info</a></li>
+              
+                <li {{ (current_page("governinfo")) ? 'class=active' : '' }}><a href="{{ url('/governinfo')}}/{{$person->id}}">Government Info</a></li>
+ 
               </ul>
 
               
