@@ -17,7 +17,7 @@ class PagesController extends Controller
 
  	public function home()
  	{
- 		$result =DB::table('manpower')->paginate(2);
+ 		$result =DB::table('manpower')->paginate(5);
         return view('home', ["data"=>$result]);
  	}
 
