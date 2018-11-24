@@ -50,6 +50,38 @@ class ManpowerController extends Controller
         }
     }
 
+    public function companyinfo($id)
+    {
+        $person =DB::table('manpower')->find($id);
+        if ($person == true) {
+            return view('manpower.companyinfo', compact('person'));
+        }else{
+             return redirect('/home');
+        }
+    }
+
+
+    public function projectinfo($id)
+    {
+        $person =DB::table('manpower')->find($id);
+        if ($person == true) {
+         
+            return view('manpower.projectsinfo', compact('person'));
+        }else{
+             return redirect('/home');
+        }
+    }
+
+    
+    public function others($id)
+    {
+        $person =DB::table('manpower')->find($id);
+        if ($person == true) {
+            return view('manpower.others', compact('person'));
+        }else{
+             return redirect('/home');
+        }
+    }
 
 
 }

@@ -70,7 +70,7 @@ function current_page($uri = "/") {
                 <li {{ (current_page("governinfo")) ? 'class=active' : '' }}><a href="{{ url('/governinfo')}}/{{$person->id}}">Government Info</a></li>
  
                 <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/companyinfo')}}/{{$person->id}}">Conpany Info</a></li>
-               
+
                 <li {{ (current_page("projectinfo")) ? 'class=active' : '' }}><a href="{{ url('/projectinfo')}}/{{$person->id}}">Projects Info</a></li>
 
                 <li {{ (current_page("Others")) ? 'class=active' : '' }}><a href="{{ url('/Others')}}/{{$person->id}}">Others</a></li>
@@ -79,52 +79,11 @@ function current_page($uri = "/") {
 
                   <hr>
                   <form class="form" action="" method="post" id="registrationForm">
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="first_name"><h4>Company Name</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            <label for="last_name"><h4>Company Address</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="phone"><h4>Company Telephone</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                             <label for="mobile"><h4>Company Email</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                          </div>
-                      </div>
+                     
 
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="phone"><h4>Start Date</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                             <label for="mobile"><h4>End Date</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                          </div>
-                      </div>
+<!--  -->
 
-                        
+
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
@@ -133,6 +92,7 @@ function current_page($uri = "/") {
  -->                            </div>
                       </div>
                 </form>
+
 
 
 
@@ -146,7 +106,6 @@ function current_page($uri = "/") {
                                                       
 
 @endsection
-
 
 
 
