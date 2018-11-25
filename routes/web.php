@@ -23,6 +23,10 @@ Route::get('/home', 'PagesController@home')->name('home')->middleware('authentic
 Auth::routes();
 Route::get('/addmanpower', 'ManpowerController@addmanpower')->middleware('authenticated');
 Auth::routes();
+Route::post('/newrecord', 'ManpowerController@addnewmanpowerrecord')->middleware('authenticated');
+Auth::routes();
+Route::get('/uploadmanpower', 'ManpowerController@uploadmanpower')->middleware('authenticated');
+Auth::routes();
 Route::get('/personalinfo/{id}', 'ManpowerController@personalinfo')->middleware('authenticated');
 Auth::routes();
 Route::get('/educationinfo/{id}', 'ManpowerController@educationinfo')->middleware('authenticated');

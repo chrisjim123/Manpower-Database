@@ -18,7 +18,8 @@ class CreateManpowerTable extends Migration
             $table->text('firstname');
             $table->text('middlename');
             $table->text('lastname');
-            $table->text('address');
+            $table->text('email');
+            $table->text('address');    
             $table->integer('contact');
             $table->timestamps();
         });

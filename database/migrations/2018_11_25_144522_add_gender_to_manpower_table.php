@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmployedTable extends Migration
+class AddGenderToManpowerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateEmployedTable extends Migration
      */
     public function up()
     {
-        Schema::create('employed', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::table('manpower', function (Blueprint $table) {
+            $table->text('gender');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateEmployedTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employed');
+        Schema::table('manpower', function (Blueprint $table) {
+            $table->dropcolumn('gender');
+        });
     }
 }
