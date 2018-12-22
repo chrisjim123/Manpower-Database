@@ -30,7 +30,7 @@ function current_page($uri = "/") {
                            <div class="col-xs-12">
                                 <br>
                                 <a href="{{ url('addmanpower')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"  {{ (current_page("addmanpower")) ? '' : '' }}></i> Add new Record</button></a>
-                                <a href="{{ url('sendsms')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-envelope"  {{ (current_page("sendsms")) ? '' : '' }}></i> Send Message</button></a>
+                                <a href="{{ url('createsms')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"  {{ (current_page("createsms")) ? '' : '' }}></i> Compose Message</button></a>
                             </div>
                       </div>
 

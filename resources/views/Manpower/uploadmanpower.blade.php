@@ -25,13 +25,16 @@ function current_page($uri = "/") {
                 <li class="active"><a href="Uploadexcel">Upload Manpower List</a></li>
               </ul><hr>
 
+<!-- 
+                    <form enctype="multipart/form-data"  class="form" action={{URL::to('/doimport')}} method="post">
 
-                  <form class="form" action="" method="post" id="registrationForm">
+                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
 
                       <div class="form-group">
                           <div class="col-xs-6">
-                              <label for="pagibig_number"><h4>Upload Excel File</h4></label>
-                              <input name="pf" type="file" class="file-upload" required>
+                              <label for="file"><h4>Upload Excel File</h4></label>
+                              <input name="upload-file" id="file" type="file" class="file-upload" required>
                           </div>
                       </div>
     
@@ -39,13 +42,73 @@ function current_page($uri = "/") {
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                                <button name="addmanpowerlist" class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button name="Import" class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                             </div>
                       </div>
                 </form>
+
+
             
               </div>
+ -->
+
+
+
+      <div class="panel-body">
+
+ 
+        <h3>Import File Form:</h3>
+        <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 20px;" action="{{ URL::to('/doimport') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+
+
+          <input type="file" name="upload_file" />
+          {{ csrf_field() }}
+          <br/>
+
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                                <button name="Import" class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+
+        </form>
+        <br/>
+
+          
+          <h3>Import File From Database:</h3>
+          <div style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 20px;">     
+            <a href="{{ url('downloadExcel/xls') }}"><button class="btn btn-success btn-lg">Download Excel xls</button></a>
+          <a href="{{ url('downloadExcel/xlsx') }}"><button class="btn btn-success btn-lg">Download Excel xlsx</button></a>
+          <a href="{{ url('downloadExcel/csv') }}"><button class="btn btn-success btn-lg">Download CSV</button></a>
+          </div>
+
+
+
+
+            
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                
               </div><!--/tab-pane-->
           </div><!--/tab-content-->

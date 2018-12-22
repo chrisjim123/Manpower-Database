@@ -25,6 +25,8 @@ Route::get('/addmanpower', 'ManpowerController@addmanpower')->middleware('authen
 Auth::routes();
 Route::post('/newrecord', 'ManpowerController@addnewmanpowerrecord')->middleware('authenticated');
 Auth::routes();
+Route::post('/doimport', 'ManpowerController@doimport')->middleware('authenticated');
+Auth::routes();
 Route::get('/uploadmanpower', 'ManpowerController@uploadmanpower')->middleware('authenticated');
 Auth::routes();
 Route::get('/personalinfo/{id}', 'ManpowerController@personalinfo')->middleware('authenticated');
@@ -39,4 +41,11 @@ Route::get('/projectinfo/{id}', 'ManpowerController@projectinfo')->middleware('a
 Auth::routes();	
 Route::get('/others/{id}', 'ManpowerController@others')->middleware('authenticated');
 
-//	
+Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
+Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
+
+//Messaging
+Auth::routes();
+Route::get('/createsms', 'ManpowerController@createsms')->middleware('authenticated');
+Auth::routes();
+Route::post('/sendsms', 'ManpowerController@sendsms')->middleware('authenticated');
