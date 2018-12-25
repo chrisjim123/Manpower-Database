@@ -100,13 +100,33 @@ function current_page($uri = "/") {
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="phone"><h4>Phone</h4></label>
-                              <input style="border:none; background:transparent;" value="None" type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" disabled="">
+                              <label for="gender"><h4>Gender</h4></label>
+                              <input style="border:none; background:transparent;" value="Male" type="text" class="form-control" name="gender" id="gender" placeholder="enter gender" disabled="">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
+                             <label for="birthdate"><h4>Birth Date</h4></label>
+                              <input style="border:none; background:transparent;" value="December 3, 1993" type="text" class="form-control" name="birthdate" id="birthdate" placeholder="enter birth date" disabled="">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="placeofbirth"><h4>Place of Birth</h4></label>
+                              <input style="border:none; background:transparent;" value="Palompon, Leyte" type="text" class="form-control" name="placeofbirth" id="placeofbirth" placeholder="enter place of birth" disabled=""></div>
+                      </div>
+                  <div class="form-group">
+                         
+                      <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input style="border:none; background:transparent;" value="None" type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" disabled="">
+                          </div>
+                      </div>
+          
+                        <div class="form-group">
+                           <div class="col-xs-6">
                              <label for="mobile"><h4>Mobile</h4></label>
                               <input style="border:none; background:transparent;" value="09196393274" type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" disabled="">
                           </div>
@@ -118,6 +138,8 @@ function current_page($uri = "/") {
                               <input style="border:none; background:transparent;" value="jimegot@yahoo.com.ph" type="email" class="form-control" name="email" id="email" placeholder="you@email.com" disabled="">
                           </div>
                       </div>
+
+
                       <div class="form-group">
                           
                           <div class="col-xs-6">
@@ -126,19 +148,18 @@ function current_page($uri = "/") {
                           </div>
                       </div>
                       <div class="form-group">
-                          
-                          <div class="col-xs-6">
+                           <div class="col-xs-6">
                               <label for="password"><h4>Religion</h4></label>
                               <input style="border:none; background:transparent;" value="Roman Catholic" type="text" class="form-control" name="Roman Catholic" id="password" placeholder="password" disabled="">
                           </div>
                       </div>
                       <div class="form-group">
-                          
-                          <div class="col-xs-6">
+                         <div class="col-xs-6">
                             <label for="password2"><h4>Civil Status</h4></label>
                               <input style="border:none; background:transparent;" value="Single" type="text" class="form-control" name="Single" id="password2" placeholder="password2" disabled="">
                           </div>
                       </div>
+            
                    
 
                       <div class="form-group">

@@ -41,8 +41,23 @@ Route::get('/projectinfo/{id}', 'ManpowerController@projectinfo')->middleware('a
 Auth::routes();	
 Route::get('/others/{id}', 'ManpowerController@others')->middleware('authenticated');
 
-Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
+/*Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
 Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
+*/
+
+//Exporting File from database
+Auth::routes();	
+Route::get('/exportrecord', 'ManpowerController@exportrecord')->middleware('authenticated');
+Auth::routes();	
+Route::get('/export_excel', 'ManpowerController@index')->middleware('authenticated');
+Auth::routes();	
+Route::get('/export_excel/xls', 'ManpowerController@xls')->name('export_excel.xls')->middleware('authenticated');
+Auth::routes();	
+Route::get('/export_excel/xlsx', 'ManpowerController@xlsx')->name('export_excel.xlsx')->middleware('authenticated');
+Auth::routes();	
+Route::get('/export_excel/csv', 'ManpowerController@csv')->name('export_excel.csv')->middleware('authenticated');
+
+
 
 //Messaging
 Auth::routes();

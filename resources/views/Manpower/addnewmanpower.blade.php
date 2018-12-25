@@ -41,6 +41,7 @@ function current_page($uri = "/") {
                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 <!-- Basic Information -->
+
                       <div class="form-group">
 
                           <div class="col-xs-6">
@@ -63,7 +64,34 @@ function current_page($uri = "/") {
                               <input type="text" class="form-control" name="middle_name" id="middle_name" placeholder="enter middle name" title="enter your middle name." required>
                           </div>
                       </div>
-          
+
+                 <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="gender"><h4>Gender</h4></label>
+                              <select style="height:35px;" class="form-control" name="gender" id="gender" title="enter gender" required>
+                              <option value="">Enter your gender</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              </select>
+<!--                               <input type="text" class="form-control" name="gender" id="gender" placeholder="enter gender" title="enter your gender." required>
+ -->                          </div>
+                      </div>
+                             <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="birthdate"><h4>Birth Date</h4></label>
+                              <input type="date" class="form-control" name="birthdate" id="birthdate" placeholder="enter birthdate" title="enter your birthdate." required>
+                          </div>
+                      </div>
+                             <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="placeofbirth"><h4>Place of Birth</h4></label>
+                              <input type="text" class="form-control" name="placeofbirth" id="placeofbirth" placeholder="enter place of birth" title="enter your place of birth." required>
+                          </div>
+                      </div>
+
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4>Mobile</h4></label>

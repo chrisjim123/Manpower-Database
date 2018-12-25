@@ -62,7 +62,7 @@ function current_page($uri = "/") {
         <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 20px;" action="{{ URL::to('/doimport') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
 
 
-          <input type="file" name="upload_file" />
+          <input type="file" name="file" />
           {{ csrf_field() }}
           <br/>
 
@@ -82,9 +82,9 @@ function current_page($uri = "/") {
           
           <h3>Import File From Database:</h3>
           <div style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 20px;">     
-            <a href="{{ url('downloadExcel/xls') }}"><button class="btn btn-success btn-lg">Download Excel xls</button></a>
-          <a href="{{ url('downloadExcel/xlsx') }}"><button class="btn btn-success btn-lg">Download Excel xlsx</button></a>
-          <a href="{{ url('downloadExcel/csv') }}"><button class="btn btn-success btn-lg">Download CSV</button></a>
+            <a href="{{ route('export_excel.xls') }}"><button class="btn btn-success btn-lg">Download Excel xls</button></a>
+          <a href="{{ route('export_excel.xlsx') }}"><button class="btn btn-success btn-lg">Download Excel xlsx</button></a>
+          <a href="{{ route('export_excel.csv') }}"><button class="btn btn-success btn-lg">Download CSV</button></a>
           </div>
 
 

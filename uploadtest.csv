@@ -1,16 +1,16 @@
-firstname,middlename,lastname,email,address,contact,,
-Chris jim,N/A,Sabosido,jimegot@yahoo.com,Burgos Street,9355595624,,
-Josephine,N/A,Pajaron,jimegot@yahoo.com,Burgos Street,9355595624,,
-Mark,N/A,Lestino,jimegot@yahoo.com,Burgos Street,9261978611,,
-James,N/A,Egot,jimegot@yahoo.com,Burgos Street,9355595624,,
-Dave,N/A,Gocella,jimegot@yahoo.com,Burgos Street,9355595624,,
-Markrenz,N/A,Marquez,jimegot@yahoo.com,Burgos Street,9261978611,,
-Miraluna,N/A,Nunez,jimegot@yahoo.com,Burgos Street,9355595624,,
-Aleony Kim,N/A,Sevilla,jimegot@yahoo.com,Burgos Street,9168866212,,
-Jaisah Faith ,N/A,Mananita,jimegot@yahoo.com,Burgos Street,9261978611,,
-Charlene Joyce,N/A,Fernandez,jimegot@yahoo.com,Burgos Street,9168866212,, 
-Krisanta,N/A,Toreta,jimegot@yahoo.com,Burgos Street,9755449407,,
-Lutchie,N/A,Dotillos,jimegot@yahoo.com,Burgos Street,9061648935,,
-john,N/A,Egot,jimegot@yahoo.com,Burgos Street,9355595624,,
-Gerald,N/A,Pajaron,jimegot@yahoo.com,Burgos Street,9355595624,,
-Dough Mark,N/A,Lestino,jimegot@yahoo.com,Burgos Street,9261978611,,
+firstname,middlename,lastname,birthdate,placeofbirth,email,address,contact,gender
+Chris jim,N/A,Sabosido,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9355595624,Male
+Josephine,N/A,Pajaron,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9355595624,Male
+Mark,N/A,Lestino,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9261978611,Female
+James,N/A,Egot,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9355595624,Male
+Dave,N/A,Gocella,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9355595624,Female
+Markrenz,N/A,Marquez,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9261978611,Male
+Miraluna,N/A,Nunez,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9355595624,Male
+Aleony Kim,N/A,Sevilla,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9168866212,Female
+Jaisah Faith ,N/A,Mananita,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9261978611,Female
+Charlene Joyce,N/A,Fernandez,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9168866212,Female
+Krisanta,N/A,Toreta,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9755449407,Male
+Lutchie,N/A,Dotillos,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9061648935,Male
+john,N/A,Egot,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9355595624,Female
+Gerald,N/A,Pajaron,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9355595624,Male
+Dough Mark,N/A,Lestino,3-Dec-93,Palompon Leyte,jimegot@yahoo.com,Burgos Street,9261978611,Male

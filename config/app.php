@@ -161,6 +161,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Cyberduck\LaravelExcel\ExcelLegacyServiceProvider::class,
+        Cyberduck\LaravelExcel\ExcelServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -229,4 +231,5 @@ return [
     ],
 
 ];
+
 

@@ -29,8 +29,10 @@ function current_page($uri = "/") {
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                                <a href="{{ url('addmanpower')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"  {{ (current_page("addmanpower")) ? '' : '' }}></i> Add new Record</button></a>
+                                <a href="{{ url('addmanpower')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-import"  {{ (current_page("addmanpower")) ? '' : '' }}></i> Add new Record</button></a>
+                                 <a href="{{ url('exportrecord')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-export"  {{ (current_page("exportrecord")) ? '' : '' }}></i> Export Records</button></a>                    
                                 <a href="{{ url('createsms')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"  {{ (current_page("createsms")) ? '' : '' }}></i> Compose Message</button></a>
+                                  
                             </div>
                       </div>
 
