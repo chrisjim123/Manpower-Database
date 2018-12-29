@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -25,6 +26,10 @@ use Twilio\Rest\Client;
 
 class ManpowerController extends Controller
 {
+
+
+
+
 
     public function createsms()
     {
@@ -130,7 +135,7 @@ $client->messages->create(
 
 
 
-
+//Importing Records From Excel to Database
 
 
      public function doimport(Request $request)
@@ -202,7 +207,7 @@ $client->messages->create(
 
 
 
-
+//Exporting Record
 
 
   public function index()
@@ -297,21 +302,6 @@ $client->messages->create(
       });
      })->download('csv');
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -64,3 +64,8 @@ Auth::routes();
 Route::get('/createsms', 'ManpowerController@createsms')->middleware('authenticated');
 Auth::routes();
 Route::post('/sendsms', 'ManpowerController@sendsms')->middleware('authenticated');
+
+
+
+Auth::routes();
+Route::any('/search', 'PagesController@search')->middleware('authenticated');
