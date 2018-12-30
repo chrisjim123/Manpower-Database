@@ -36,9 +36,18 @@ function current_page($uri = "/") {
               </ul><hr>
 
 
-                     <form class="form" action={{URL::to('/newrecord')}} method="post">
+                     <form class="form" action={{URL::to('/newrecord')}} method="post" enctype="multipart/form-data">
 
                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                      <div class="container">
+                      <label><h4 class="text-center">Upload Profile Picture</h4></label>
+                     <!--  <input type="file" class="text-left left-block file-upload"> -->
+                     <input type="file" style=" font-size:19px; height:28.5px;  border: 1px;" name="image"/><br/>
+ 
+  
+                      </div><hr>
+
 
 <!-- Basic Information -->
 

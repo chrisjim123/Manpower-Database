@@ -20,6 +20,13 @@ class Manpower extends Model
   return array('firstname' => $array['firstname'],'firstname' => $array['firstname']);
 }
 */
+
+
+/*$casts = [
+    'field' => 'array'
+];	
+
+*/
 }
 
 

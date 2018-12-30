@@ -6,6 +6,8 @@
 
         <title>Laravel</title>
 
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+ 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
@@ -45,7 +47,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 50px;
             }
 
             .links > a {
@@ -79,20 +81,129 @@
                 </div>
             @endif
 
+
+
+
+<!----------------------------------START SLIDER-------------------------------------------------------------->
+
+ <div class="row carousel-holder">
+
+                    <div class="col-md-8" >
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                                      <!--                         <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                                 <li data-target="#carousel-example-generic" data-slide-to="5"></li> -->
+                               <!-- <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="4"></li> -->
+                   
+                            </ol>
+                            <div class="carousel-inner"  >
+                              <div class="item active" >
+                           
+                                    <img style="height:324px;"  class="slide-image" src="chrisjim.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img style="height:324px;"  class="slide-image" src="images/2.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img style="height:324px;"  class="slide-image" src="images/3.png" alt="">
+                                </div>
+                                   <div class="item">
+                                    <img style="height:324px;"  class="slide-image" src="images/4.png" alt="">
+                                </div>
+                                    <div class="item">
+                                    <img style="height:324px;"  class="slide-image" src="images/5.png" alt="">
+                                </div>
+                                     <div class="item">
+                                    <img style="height:324px;"  class="slide-image" src="images/6.png" alt="">
+                                </div>
+                                
+                              
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                
+     
+
+                </div>
+
+<!------------------------------END SLIDER------------------------------------------------------>
+
+ 
+
+
+
             <div class="content">
                 <div class="title m-b-md responsive">
                     ASI Manpower Database
                 </div>
 
-<!--                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
+                <div class="links">
+                <!--     <a href="https://nova.laravel.com">Photos</a> -->
+                    <a href="https://forge.laravel.com">About</a>
+                    <a href="https://github.com/laravel/laravel">Contact</a>
+                   <!--  <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> -->
+                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
+                </div>
             </div>
         </div>
     </body>
 </html>
+
+
+
+
+<script>
+  function checkall(selector)
+  {
+    if(document.getElementById('chkall').checked==true)
+    {
+      var chkelement=document.getElementsByName(selector);
+      for(var i=0;i<chkelement.length;i++)
+      {
+        chkelement.item(i).checked=true;
+      }
+    }
+    else
+    {
+      var chkelement=document.getElementsByName(selector);
+      for(var i=0;i<chkelement.length;i++)
+      {
+        chkelement.item(i).checked=false;
+      }
+    }
+  }
+   function checkNumber(textBox){
+        while (textBox.value.length > 0 && isNaN(textBox.value)) {
+          textBox.value = textBox.value.substring(0, textBox.value.length - 1)
+        }
+        textBox.value = trim(textBox.value);
+      }
+      //
+      function checkText(textBox)
+      {
+        var alphaExp = /^[a-zA-Z]+$/;
+        while (textBox.value.length > 0 && !textBox.value.match(alphaExp)) {
+          textBox.value = textBox.value.substring(0, textBox.value.length - 1)
+        }
+        textBox.value = trim(textBox.value);
+      }
+
+      
+</script>

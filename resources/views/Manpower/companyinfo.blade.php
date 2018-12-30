@@ -30,13 +30,12 @@ function current_page($uri = "/") {
     <div class="row">
         <div class="col-sm-3"><!--left col-->
               
-
-      <div class="text-center">
-        <img src="/defaultimage.png" class="avatar img-circle img-thumbnail" alt="avatar">
- <!--        <h6>Upload a different photo...</h6>
+  <div class="text-center">
+      <img src="data:image;base64,{{$person->imagefile}}" class="avatar img-circle img-thumbnail" alt="avatar">
+   <!--      <img src="/defaultimage.png" class="avatar img-circle img-thumbnail" alt="avatar"> -->
+<!--         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block file-upload"> -->
       </div></hr><br>
-
                
           <div class="panel panel-default">
             <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>

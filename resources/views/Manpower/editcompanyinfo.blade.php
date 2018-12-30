@@ -62,7 +62,7 @@
 
       
                 <hr>
-                  <form class="form" action="##" method="post" id="registrationForm">
+                  <form class="form" action="##" method="post" id="registrationForm" enctype="multipart/form-data">
                       <div class="form-group">
                           
                           <div class="col-xs-6">

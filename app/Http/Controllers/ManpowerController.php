@@ -19,9 +19,9 @@ use File;
 require __DIR__ . '/vendor/autoload.php';*/
 
 // Use the REST API Client to make requests to the Twilio REST API
-use Twilio\Rest\Client;
+/*use Twilio\Rest\Client;
 
-
+*/
 
 
 class ManpowerController extends Controller
@@ -122,12 +122,36 @@ $client->messages->create(
         date_default_timezone_set("Asia/Manila");
         $time = date("Y-m-d h:i");
 
-        $data = array('firstname'=>$firstname,"middlename"=>$middlename,"lastname"=>$lastname,"birthdate"=>$birthdate,"place_of_birth"=>$placeofbirth,"email"=>$email,"address"=>$address,"contact"=>$contact,"created_at"=>$time,"updated_at"=>$time,"gender"=>$gender);
+
+      if (!empty($_FILES['image']['name'])) {
+
+        $image= addslashes($_FILES['image']['tmp_name']);
+        $name= addslashes($_FILES['image']['name']);
+        $image= file_get_contents($image);
+        $image= base64_encode($image);
+
+         $data = array('firstname'=>$firstname,"middlename"=>$middlename,"lastname"=>$lastname,"birthdate"=>$birthdate,"place_of_birth"=>$placeofbirth,"email"=>$email,"address"=>$address,"contact"=>$contact,"created_at"=>$time,"updated_at"=>$time,"gender"=>$gender,"imagefile"=>$image,"imagename"=>$name);
         db::table('manpower')->insert($data);
 
         session()->flash('status', 'New Record has been Successfully Added.');
         return redirect('/home');
   
+
+      }else{
+        $name= 'default';
+        $image= file_get_contents('defaultimage.png');
+        $image= base64_encode($image);
+
+        $data = array('firstname'=>$firstname,"middlename"=>$middlename,"lastname"=>$lastname,"birthdate"=>$birthdate,"place_of_birth"=>$placeofbirth,"email"=>$email,"address"=>$address,"contact"=>$contact,"created_at"=>$time,"updated_at"=>$time,"gender"=>$gender,"imagefile"=>$image,"imagename"=>$name);
+        db::table('manpower')->insert($data);
+
+        session()->flash('status', 'New Record has been Successfully Added.');
+        return redirect('/home');
+  
+        }
+
+
+       
     }
 
 
@@ -158,6 +182,12 @@ $client->messages->create(
                 })->get();
                 if(!empty($data) && $data->count()){
      
+
+              $name= 'default';
+              $image= file_get_contents('defaultimage.png');
+              $image= base64_encode($image);
+
+
                 foreach ($data as $key => $value) {
                     $insert[] = [
                     'firstname' => $value->firstname,
@@ -171,6 +201,8 @@ $client->messages->create(
                     'created_at' => $time,
                     'updated_at' => $time,
                     'gender' => $value->gender,
+                    'imagefile' => $image,
+                    'imagename' => $name,
                     ];
                 }
  
@@ -377,6 +409,24 @@ $client->messages->create(
              return redirect('/home');
         }
     }
+
+
+
+
+        public function editpersonalinfo($id)
+    {
+    /*  $person = Manpower::find($id);*/
+      $person =DB::table('manpower')->find($id);
+      if ($person == true) {
+        return view('manpower.editpersonalinfo', compact('person'));
+      }else{
+         return redirect('/home');
+      }
+  
+    }
+
+
+
 
 
 }

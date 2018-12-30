@@ -34,7 +34,8 @@ function current_page($uri = "/") {
               
 
       <div class="text-center">
-        <img src="/defaultimage.png" class="avatar img-circle img-thumbnail" alt="avatar">
+      <img src="data:image;base64,{{$person->imagefile}}" class="avatar img-circle img-thumbnail" alt="avatar">
+   <!--      <img src="/defaultimage.png" class="avatar img-circle img-thumbnail" alt="avatar"> -->
 <!--         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block file-upload"> -->
       </div></hr><br>
@@ -81,7 +82,9 @@ function current_page($uri = "/") {
 
               
                 <hr>
-                  <form class="form" action="" method="post" id="registrationForm">
+                  <form class="form" action="{{ url('/editpersonalinfo')}}/{{$person->id}}" method="post" id="registrationForm" enctype="multipart/form-data">
+                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                       <div class="form-group">
 
                           <div class="col-xs-6">
@@ -165,7 +168,7 @@ function current_page($uri = "/") {
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                                <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                                <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-edit"></i> Edit</button>
 <!--                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
  -->                            </div>
                       </div>

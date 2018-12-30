@@ -31,7 +31,7 @@ function current_page($uri = "/") {
         </div><!--/col-3-->
         <div class="col-sm-12">
              <ul class="nav nav-tabs">
-                <li class="active"><a href="addmanpower">Send Message to Manpower</a></li>
+                <li class="active"><a href="#">Send Message to Manpower</a></li>
               </ul><hr>
 
 
@@ -39,9 +39,9 @@ function current_page($uri = "/") {
 
                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <!--  -->
- 
-                           <div class="col-sm-12">
-                            <textarea name="message" responsive name="myTextBox" cols="100" rows="10" placeholder="Enter message here..."></textarea>
+                          <div class="container">
+                    
+                            <textarea class="responsive" name="message" name="myTextBox" cols="30" rows="10" placeholder="Enter message here..."></textarea>
                             <br />
 
                            </div>
@@ -49,7 +49,7 @@ function current_page($uri = "/") {
 textarea {
   max-width: 100%;
 }
-</script>
+</script> 
 
                       <div class="form-group">
                            <div class="col-xs-12">
