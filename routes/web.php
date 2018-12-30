@@ -19,6 +19,12 @@ Route::get('/', 'PagesController@welcome');
 Auth::routes();
 Route::get('/home', 'PagesController@home')->name('home')->middleware('authenticated');
 
+//PagesController
+Auth::routes();
+Route::any('/search', 'PagesController@search')->middleware('authenticated');
+Auth::routes();
+Route::any('delete/{id}', 'PagesController@destroy')->middleware('authenticated');
+
 //Manpower Routes
 Auth::routes();
 Route::get('/addmanpower', 'ManpowerController@addmanpower')->middleware('authenticated');
@@ -66,6 +72,3 @@ Auth::routes();
 Route::post('/sendsms', 'ManpowerController@sendsms')->middleware('authenticated');
 
 
-
-Auth::routes();
-Route::any('/search', 'PagesController@search')->middleware('authenticated');

@@ -41,31 +41,38 @@ function current_page($uri = "/") {
                     
                     <div class="input-group">
             
-                        <input class="form-control" name="search" placeholder="Search here" type="text"><span class="input-group-btn"><button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button></span>
+                        <input class="form-control" name="search" placeholder="Search here (First Name, Middle Name or Last Name)" type="text"><span class="input-group-btn"><button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button></span>
             
                     </div>
 
                     </form>
                     </div>
 
+               <div class="container">
                       <div class="form-group">
                            <div class="col-xs-12">  
                                 <br>
-                                <a href="{{ url('addmanpower')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-import"  {{ (current_page("addmanpower")) ? '' : '' }}></i> Add new Record</button></a>
-                                 <a href="{{ url('exportrecord')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-export"  {{ (current_page("exportrecord")) ? '' : '' }}></i> Export Records</button></a>                    
-                                <a href="{{ url('createsms')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"  {{ (current_page("createsms")) ? '' : '' }}></i> Compose Message</button></a>
+                                <a title="Add New Record"  href="{{ url('addmanpower')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"  {{ (current_page("addmanpower")) ? '' : '' }}></i></button></a>
+                                 <a title="Generate Report"  href="{{ url('exportrecord')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-export"  {{ (current_page("exportrecord")) ? '' : '' }}></i></button></a>                    
+                                <a title="Compose Message" href="{{ url('createsms')}}"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-envelope"  {{ (current_page("createsms")) ? '' : '' }}></i></button></a>
                                   
                             </div>
                       </div>
+                      </div>
+
+
+
   <div class="container">
-                   <br><br>
+                   <br>
                    @if(isset($data))
                     <table id="pagination" class="table table-hover table-striped table-responsive">
                     <thead> 
-                            <th>#</th>
+                            <th>Nos.</th>
                             <th>First Name</th>
                             <th>Middle Name</th>
                             <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>Email</th>
                             <th>Contact</th>
                             <th>Action</th>
                         
@@ -77,9 +84,11 @@ function current_page($uri = "/") {
                             <td id="upr">{{$per->firstname}}</td>
                             <td id="upr">{{$per->middlename}}</td>
                             <td id="upr">{{$per->lastname}}</td>
+                            <td id="upr">{{$per->gender}}</td>
+                            <td id="upr">{{$per->email}}</td>
                             <td id="upr">{{$per->contact}}</td>
                          
-                            <td><a href="personalinfo/{{$per->id}}"><button class="btn btn-sm btn-success" title="view manpower info."><i class="glyphicon glyphicon-search"> View</i></button></a><button class="btn btn-sm btn-primary" title="edit manpower info."><i class="glyphicon glyphicon-pencil"> Edit</i></button><button class="btn btn-sm btn-danger" title="delete manpower record."><i class="glyphicon glyphicon-trash"> Delete</i></button><a href="sendsms/{{$per->id}}"><button class="btn btn-sm btn-success" title="send text message."><i class="glyphicon glyphicon-envelope"> Message</i></button></td>
+                            <td><a href="personalinfo/{{$per->id}}"><button class="btn btn-sm btn-success" title="view manpower info."><i class="glyphicon glyphicon-search"></i></button></a><button class="btn btn-sm btn-primary" title="edit manpower info."><i class="glyphicon glyphicon-pencil"></i></button><a href="delete/{{$per->id}}"><button class="btn btn-sm btn-danger" title="delete manpower record."><i class="glyphicon glyphicon-trash"></i></button></a><a href="sendsms/{{$per->id}}"><button class="btn btn-sm btn-success" title="send text message."><i class="glyphicon glyphicon-envelope"></i></button></td>
       
                     </tr>
                     @endforeach

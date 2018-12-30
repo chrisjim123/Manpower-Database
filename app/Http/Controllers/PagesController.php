@@ -47,8 +47,18 @@ class PagesController extends Controller
 			}	
 			return view('home')->withMessage("No Results found!");
         }
-        return view('home')->withMessage("No Results found!");
+       	else{
+       		$result =DB::table('manpower')->paginate(25);
+        	return view('home', ["data"=>$result]);
+       	}
  	}
+
+ 	public function destroy($id) {
+      DB::delete('delete from manpower where id = ?',[$id]);
+      
+      session()->flash('status', 'Record deleted Successfully.');
+      return redirect('/home');
+   }
 
 
 
