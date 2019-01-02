@@ -127,7 +127,7 @@ function current_page($uri = "/") {
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                                <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                                <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-edit"></i> Edit</button>
 <!--                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
  -->                            </div>
                       </div>

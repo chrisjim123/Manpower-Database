@@ -26,7 +26,7 @@ Auth::routes();
 Route::any('delete/{id}', 'PagesController@destroy')->middleware('authenticated');
 Auth::routes();
 Route::any('deleteall', 'PagesController@destroyall')->middleware('authenticated');
-
+ 
 //Manpower Routes
 Auth::routes();
 Route::get('/addmanpower', 'ManpowerController@addmanpower')->middleware('authenticated');
@@ -52,6 +52,10 @@ Route::get('/others/{id}', 'ManpowerController@others')->middleware('authenticat
 //Manpower Editing
 Auth::routes();	
 Route::any('/editpersonalinfo/{id}', 'ManpowerController@editpersonalinfo')->middleware('authenticated');
+Auth::routes();	
+Route::any('/updatepersonalinfo/{id}', 'ManpowerController@updatepersonalinfo')->middleware('authenticated');
+Auth::routes();	
+Route::any('/updateprofilepicture/{id}', 'ManpowerController@updateprofilepicture')->middleware('authenticated');
 
 /*Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
 Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');

@@ -63,27 +63,35 @@ class PagesController extends Controller
 
  	public function destroyall(Request $request) {
  	  
- /*	 @$id=$_POST['selector'];*/
 
- 	 	 $selector=$request->input('selector');
+/*if ( ! $request->has('selector')) {
+    $checkboxValue = $request->input('selector');
+    echo  $checkboxValue;
+ }
+*/
 
-/*	 $key = count($id);*/
-	//multi delete using checkbox as a selector
+/* 	 $id=$request->input('selector');*/
+
+ 
+/*	 $key = count($id);
+*/	//multi delete using checkbox as a selector
 	
-/*	if($key	<> 0){
-	for($i=0;$i<$key;$i++){*/
+/*
+	if($key	<> 0){
+	for($i=0;$i<$key;$i++){
 
-      DB::delete('delete from manpower where id = ?',[$id]);
+      DB::delete('delete from manpower where id = ?',$id[$i]);
       
       session()->flash('status', 'Records deleted Successfully.');
       return redirect('/home');
-/*      	}
+      	}
 	}else{
-	  session()->flash('status', 'Please select record to be deleted.');
+	  session()->flash('status', 'Please select record to be deleted.'.$key);
       return redirect('/home');
-	}*/
-
+	}
+*/
    	}
+
 
 
 

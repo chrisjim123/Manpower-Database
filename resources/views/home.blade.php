@@ -47,10 +47,7 @@ function current_page($uri = "/") {
 
                     </form>
                     </div>
-
-
-  <form action="{{ URL::to('/deleteall') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">  
+ 
                   
                <div class="container">
                       <div class="form-group">
@@ -59,7 +56,8 @@ function current_page($uri = "/") {
                                 <a title="Add New Record"  href="{{ url('addmanpower')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:green;" class="glyphicon glyphicon-plus-sign"  {{ (current_page("addmanpower")) ? '' : '' }}></i></button></a>
                                  <a title="Generate Report"  href="{{ url('exportrecord')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:green;" class="glyphicon glyphicon-circle-arrow-down"  {{ (current_page("exportrecord")) ? '' : '' }}></i></button></a>                    
                                 <a title="Compose Message" href="{{ url('createsms')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:green;"  class="glyphicon glyphicon-envelope"  {{ (current_page("createsms")) ? '' : '' }}></i></button></a>
-                              <!--   <a title="Delete Record" href="{{ url('deleteall')}}"> --><button class="btn btn-lg btn-default" type="submit"><i style="color:red;" class="glyphicon glyphicon-trash"  {{ (current_page("deleteall")) ? '' : '' }}></i></button><!-- </a> -->
+                         
+                               <a title="Delete Record" href="{{ url('deleteall')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:red;" class="glyphicon glyphicon-trash"  {{ (current_page("deleteall")) ? '' : '' }}></i></button></a>
                                   
                             </div>
                       </div>
@@ -72,8 +70,8 @@ function current_page($uri = "/") {
                    @if(isset($data))
                     <table id="pagination" class="table table-hover table-striped table-responsive">
                     <thead> 
-                            <th>Nos.</th>
-                            <th width="10%" align="left"><input type="checkbox" name="selector[]" id="chkall" onclick="return checkall('selector[]');">ID#</th>
+                            <th width="5px" align="left"><input type="checkbox" name="selector[]" id="chkall" onclick="return checkall('selector[]');"></th>
+                            <th>No</th>
                             <th>First Name</th>
                             <th>Middle Name</th>
                             <th>Last Name</th>
@@ -86,8 +84,8 @@ function current_page($uri = "/") {
                     <tbody> 
                      @foreach($data as $per)
                     <tr>    
+                            <td width="5px"><input type="checkbox" name="selector[]" id="selector[]" value="{{$per->id}}"/></td>
                             <td>{{$loop->index+1}}</td>
-                            <td><input type="checkbox" name="selector[]" id="selector[]" value="{{$per->id}}"/>{{$per->id}}</td>
                             <td id="upr">{{$per->firstname}}</td>
                             <td id="upr">{{$per->middlename}}</td>
                             <td id="upr">{{$per->lastname}}</td>
@@ -101,6 +99,8 @@ function current_page($uri = "/") {
                     @endforeach
                     </tbody>
                     </table>
+
+         
                     
                     {{$data->links()}}
                     @else
@@ -110,7 +110,7 @@ function current_page($uri = "/") {
             </div>
                </div> 
         </div>
-        </form>
+    
     </div>
 </div>
 @endsection

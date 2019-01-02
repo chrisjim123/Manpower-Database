@@ -427,6 +427,52 @@ $client->messages->create(
 
 
 
+public function updateprofilepicture(Request $request,$id) {
+      
+
+      if (!empty($_FILES['image']['name'])) {
+
+        $image= addslashes($_FILES['image']['tmp_name']);
+        $name= addslashes($_FILES['image']['name']);
+        $image= file_get_contents($image);
+        $image= base64_encode($image);
+
+        Manpower::where('id', '=', $id)->update(['imagefile' => $image, 'imagename' => $name]);
+        
+        session()->flash('status', 'Profile picture has been updated successfully.');
+        return back();
+  
+
+      }else{
+        $name= 'default';
+        $image= file_get_contents('defaultimage.png');
+        $image= base64_encode($image);
+
+        Manpower::where('id', '=', $id)->update(['firstname' => $firstname, 'imagefile' => $image, 'imagename' => $name]);
+  
+        session()->flash('status', 'Profile picture has been updated successfully.');
+        return back();
+
+  
+        }
+
+   }
+
+
+
+
+
+public function updatepersonalinfo(Request $request,$id) {
+      
+       $firstname = $request->input('first_name');
+
+        Manpower::where('id', '=', $id)->update(['firstname' => $firstname]);
+        
+        session()->flash('status', 'Basic info has been updated successfully.');
+        return back();
+   }
 
 
 }
+
+
