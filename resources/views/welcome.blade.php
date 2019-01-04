@@ -1,10 +1,37 @@
+
+ 
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+
+
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" id="bootstrap-css">
+  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.min.js') }}"></script>
+  
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/profileapp.js') }}" defer></script>
+    <script src="{{ asset('js/jquery2.min.js') }}" ></script>
+    <script src="{{ asset('js/bootstrap2.min.js') }}"></script>
+
+
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap3.3.7/css/bootstrap.min.css') }}">
+
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>ASI Manpower Database</title>
 
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
  
@@ -82,73 +109,48 @@
             @endif
 
 
-
-
-<!----------------------------------START SLIDER-------------------------------------------------------------->
-
- <div class="row carousel-holder">
-
-                    <div class="col-md-8" >
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-                                      <!--                         <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                                 <li data-target="#carousel-example-generic" data-slide-to="5"></li> -->
-                               <!-- <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="4"></li> -->
-                   
-                            </ol>
-                            <div class="carousel-inner"  >
-                              <div class="item active" >
-                           
-                                    <img style="height:324px;"  class="slide-image" src="chrisjim.png" alt="">
-                                </div>
-                                <div class="item">
-                                    <img style="height:324px;"  class="slide-image" src="images/2.png" alt="">
-                                </div>
-                                <div class="item">
-                                    <img style="height:324px;"  class="slide-image" src="images/3.png" alt="">
-                                </div>
-                                   <div class="item">
-                                    <img style="height:324px;"  class="slide-image" src="images/4.png" alt="">
-                                </div>
-                                    <div class="item">
-                                    <img style="height:324px;"  class="slide-image" src="images/5.png" alt="">
-                                </div>
-                                     <div class="item">
-                                    <img style="height:324px;"  class="slide-image" src="images/6.png" alt="">
-                                </div>
-                                
-                              
-                            </div>
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                
-     
-
-                </div>
-
-<!------------------------------END SLIDER------------------------------------------------------>
-
- 
-
-
-
             <div class="content">
+
+
+
+
                 <div class="title m-b-md responsive">
                     ASI Manpower Database
                 </div>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+ 
+  <ol class="carousel-indicators">
+   @foreach( $data as $person )
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+   @endforeach
+  </ol>
+ 
+  <div class="carousel-inner" role="listbox">
+    @foreach( $data as $person )
+       <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+           <img class="d-block img-fluid" src="data:image;base64,{{ $person->imagefile }}" alt="{{ $person->imagename }}">
+              <div class="carousel-caption d-none d-md-block">
+<!--                  <h3>{{ $person->imagefile }}</h3>
+                 <p>{{ $person->imagename }}</p> -->
+              </div>
+       </div>
+    @endforeach
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<br>
+
 
                 <div class="links">
                 <!--     <a href="https://nova.laravel.com">Photos</a> -->
@@ -167,43 +169,3 @@
 </html>
 
 
-
-
-<script>
-  function checkall(selector)
-  {
-    if(document.getElementById('chkall').checked==true)
-    {
-      var chkelement=document.getElementsByName(selector);
-      for(var i=0;i<chkelement.length;i++)
-      {
-        chkelement.item(i).checked=true;
-      }
-    }
-    else
-    {
-      var chkelement=document.getElementsByName(selector);
-      for(var i=0;i<chkelement.length;i++)
-      {
-        chkelement.item(i).checked=false;
-      }
-    }
-  }
-   function checkNumber(textBox){
-        while (textBox.value.length > 0 && isNaN(textBox.value)) {
-          textBox.value = textBox.value.substring(0, textBox.value.length - 1)
-        }
-        textBox.value = trim(textBox.value);
-      }
-      //
-      function checkText(textBox)
-      {
-        var alphaExp = /^[a-zA-Z]+$/;
-        while (textBox.value.length > 0 && !textBox.value.match(alphaExp)) {
-          textBox.value = textBox.value.substring(0, textBox.value.length - 1)
-        }
-        textBox.value = trim(textBox.value);
-      }
-
-      
-</script>

@@ -82,3 +82,8 @@ Auth::routes();
 Route::post('/sendsms', 'ManpowerController@sendsms')->middleware('authenticated');
 
 
+//Photo Gallery
+Auth::routes();	
+Route::any('/album', 'AlbumController@index')->middleware('authenticated');
+Auth::routes();	
+Route::any('/uploadbanner', 'AlbumController@uploadbanner')->middleware('authenticated');

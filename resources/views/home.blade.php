@@ -56,7 +56,7 @@ function current_page($uri = "/") {
                                 <a title="Add New Record"  href="{{ url('addmanpower')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:green;" class="glyphicon glyphicon-plus-sign"  {{ (current_page("addmanpower")) ? '' : '' }}></i></button></a>
                                  <a title="Generate Report"  href="{{ url('exportrecord')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:green;" class="glyphicon glyphicon-circle-arrow-down"  {{ (current_page("exportrecord")) ? '' : '' }}></i></button></a>                    
                                 <a title="Compose Message" href="{{ url('createsms')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:green;"  class="glyphicon glyphicon-envelope"  {{ (current_page("createsms")) ? '' : '' }}></i></button></a>
-                         
+                                <a title="Album" href="{{ url('album')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:blue;"  class="glyphicon glyphicon-picture"  {{ (current_page("album")) ? '' : '' }}></i></button></a>
                                <a title="Delete Record" href="{{ url('deleteall')}}"><button class="btn btn-lg btn-default" type="submit"><i style="color:red;" class="glyphicon glyphicon-trash"  {{ (current_page("deleteall")) ? '' : '' }}></i></button></a>
                                   
                             </div>
@@ -66,6 +66,15 @@ function current_page($uri = "/") {
 <hr>
 
   <div class="container">
+
+
+
+
+
+
+
+
+
                    
                    @if(isset($data))
                     <table id="pagination" class="table table-hover table-striped table-responsive">

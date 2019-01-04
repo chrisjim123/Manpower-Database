@@ -14,13 +14,16 @@ use App\Manpower;
 use Session;
 use Excel;
 use File;
+use Album;
 
 class PagesController extends Controller
 {
    
     public function welcome()
  	{
- 		return view('welcome');
+ 		$result =DB::table('banner')->paginate(25);
+        return view('welcome', ["data"=>$result]);
+/* 		return view('welcome');*/
  	}	
 
  	public function home()
