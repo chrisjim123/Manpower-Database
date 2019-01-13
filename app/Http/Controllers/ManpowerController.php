@@ -127,9 +127,23 @@ $client->messages->create(
 
         $image= addslashes($_FILES['image']['tmp_name']);
         $name= addslashes($_FILES['image']['name']);
+        $sourceProperties = getimagesize($image);
         $image= file_get_contents($image);
         $image= base64_encode($image);
+        $image = imageResize($image,$sourceProperties[0],$sourceProperties[1]);
 
+
+
+ function imageResize($imageSrc,$imageWidth,$imageHeight) {
+
+    $newImageWidth =192;
+    $newImageHeight =192;
+
+    $newImageLayer=imagecreatetruecolor($newImageWidth,$newImageHeight);
+    imagecopyresampled($newImageLayer,$image,0,0,0,0,$newImageWidth,$newImageHeight,$imageWidth,$imageHeight);
+
+    return $newImageLayer;
+}
          $data = array('firstname'=>$firstname,"middlename"=>$middlename,"lastname"=>$lastname,"birthdate"=>$birthdate,"place_of_birth"=>$placeofbirth,"email"=>$email,"address"=>$address,"contact"=>$contact,"created_at"=>$time,"updated_at"=>$time,"gender"=>$gender,"imagefile"=>$image,"imagename"=>$name);
         db::table('manpower')->insert($data);
 
@@ -153,6 +167,23 @@ $client->messages->create(
 
        
     }
+
+
+
+
+
+
+public function imageResize($imageSrc,$imageWidth,$imageHeight) {
+
+    $newImageWidth =192;
+    $newImageHeight =192;
+
+    $newImageLayer=imagecreatetruecolor($newImageWidth,$newImageHeight);
+    imagecopyresampled($newImageLayer,$imageSrc,0,0,0,0,$newImageWidth,$newImageHeight,$imageWidth,$imageHeight);
+
+    return $newImageLayer;
+}
+
 
 
      
@@ -427,7 +458,16 @@ $client->messages->create(
 
 
 
+
+
+
+
+
+
+
 public function updateprofilepicture(Request $request,$id) {
+
+
       
 
       if (!empty($_FILES['image']['name'])) {
@@ -437,13 +477,14 @@ public function updateprofilepicture(Request $request,$id) {
         $image= file_get_contents($image);
         $image= base64_encode($image);
 
+ 
         Manpower::where('id', '=', $id)->update(['imagefile' => $image, 'imagename' => $name]);
         
         session()->flash('status', 'Profile picture has been updated successfully.');
         return back();
   
 
-      }else{
+      }else{  
         $name= 'default';
         $image= file_get_contents('defaultimage.png');
         $image= base64_encode($image);
@@ -456,7 +497,25 @@ public function updateprofilepicture(Request $request,$id) {
   
         }
 
+
+
    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

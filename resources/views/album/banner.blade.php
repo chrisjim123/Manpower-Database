@@ -53,7 +53,7 @@ function current_page($uri = "/") {
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                                <button name="Import" class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button name="submit" class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                             </div>
                       </div>
