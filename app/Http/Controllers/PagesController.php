@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Manpower;
+use App\Masterfile;
 use Session;
 use Excel;
 use File;
@@ -29,7 +30,7 @@ class PagesController extends Controller
  	public function home()
  	{
 
- 		$result =DB::table('manpower')->paginate(25);
+ 		$result =DB::table('masterfile')->paginate(25);
         return view('home', ["data"=>$result]);
  	}
 
@@ -39,7 +40,7 @@ class PagesController extends Controller
  
    		$search = Input::get('search');
         if($search != ''){
-        	$data = Manpower::where('firstname', 'LIKE', '%'.$search.'%')
+        	$data = Masterfile::where('firstname', 'LIKE', '%'.$search.'%')
         					->orWhere('middlename', 'LIKE', '%'.$search.'%')
         					->orWhere('lastname', 'LIKE', '%'.$search.'%')
         					->paginate(5)
@@ -51,7 +52,7 @@ class PagesController extends Controller
 			return view('home')->withMessage("No Results found!");
         }
        	else{
-       		$result =DB::table('manpower')->paginate(25);
+       		$result =DB::table('masterfile')->paginate(25);
         	return view('home', ["data"=>$result]);
        	}
  	}

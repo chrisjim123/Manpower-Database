@@ -41,7 +41,7 @@ function current_page($uri = "/") {
                
           <div class="panel panel-default">
             <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
-            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+            <div class="panel-body">None</div>
           </div>
           
           
@@ -70,7 +70,7 @@ function current_page($uri = "/") {
               
                 <li {{ (current_page("governinfo")) ? 'class=active' : '' }}><a href="{{ url('/governinfo')}}/{{$person->id}}">Government Info</a></li>
                 
-                <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/companyinfo')}}/{{$person->id}}">Conpany Info</a></li>
+                <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/companyinfo')}}/{{$person->id}}">Company Info</a></li>
 
                 <li {{ (current_page("projectinfo")) ? 'class=active' : '' }}><a href="{{ url('/projectinfo')}}/{{$person->id}}">Projects Info</a></li>
 
@@ -84,14 +84,14 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="first_name"><h4>SSS Number</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->sss}}" type="text" class="form-control" name="first_name" id="first_name" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                             <label for="last_name"><h4>PhilHealth Number</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->phil}}" type="text" class="form-control" name="last_name" id="last_name" placeholder="None">
                           </div>
                       </div>
           
@@ -99,14 +99,14 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>Pag-Ibig Number</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->pagibig}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4>TIN Number</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->tin}}" type="text" class="form-control" name="mobile" id="mobile" placeholder="None">
                           </div>
                       </div>
                       

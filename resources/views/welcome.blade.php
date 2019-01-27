@@ -115,7 +115,7 @@
 
 
                 <div class="title m-b-md responsive">
-                    ASI Manpower Database
+                    Manpower Database
                 </div>
 
 

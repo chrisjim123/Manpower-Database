@@ -32,7 +32,7 @@ function current_page($uri = "/") {
                
           <div class="panel panel-default">
             <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
-            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+            <div class="panel-body">None</div>
           </div>
           
 <!--           
@@ -61,7 +61,7 @@ function current_page($uri = "/") {
               
                 <li {{ (current_page("governinfo")) ? 'class=active' : '' }}><a href="{{ url('/governinfo')}}/{{$person->id}}">Government Info</a></li>
  
-                <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/companyinfo')}}/{{$person->id}}">Conpany Info</a></li>
+                <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/companyinfo')}}/{{$person->id}}">Company Info</a></li>
                 
                 <li {{ (current_page("projectinfo")) ? 'class=active' : '' }}><a href="{{ url('/projectinfo')}}/{{$person->id}}">Projects Info</a></li>
 
@@ -75,14 +75,14 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="first_name"><h4>Elementary School</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->elem_school}}" type="text" class="form-control" name="first_name" id="first_name" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                             <label for="last_name"><h4>S.Y. Graduated</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->elemgrad}}" type="text" class="form-control" name="last_name" id="last_name" placeholder="None">
                           </div>
                       </div>
           
@@ -90,28 +90,28 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>High School</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->highschool}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4>S.Y. Graduated</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->hsgrad}}" type="text" class="form-control" name="mobile" id="mobile" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>College</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->college}}" type="email" class="form-control" name="email" id="email" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>S.Y. Graduated</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                              <input style="border:none; background:transparent;" disabled="" value="{{$person->collegegrad}}" type="email" class="form-control" id="location" placeholder="None">
                           </div>
                       </div>
                       

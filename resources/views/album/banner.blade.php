@@ -31,8 +31,8 @@ function current_page($uri = "/") {
         </div><!--/col-3-->
         <div class="col-sm-12">
              <ul class="nav nav-tabs">
-                <li class="active"><a href="addmanpower">Upload Photos</a></li>
-                <li><a href="uploadmanpower">View Photos</a></li>
+                <li class="active"><a href="album">Upload Photos</a></li>
+                <li><a href="">View Photos</a></li>
               </ul><hr>
 
 

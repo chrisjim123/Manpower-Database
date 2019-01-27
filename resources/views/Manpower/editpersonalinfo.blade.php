@@ -86,7 +86,7 @@ function current_page($uri = "/") {
               
                 <li {{ (current_page("governinfo")) ? 'class=active' : '' }}><a href="{{ url('/governinfo')}}/{{$person->id}}">Government Info</a></li>
                
-                <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/companyinfo')}}/{{$person->id}}">Conpany Info</a></li>
+                <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/companyinfo')}}/{{$person->id}}">Company Info</a></li>
 
                 <li {{ (current_page("projectinfo")) ? 'class=active' : '' }}><a href="{{ url('/projectinfo')}}/{{$person->id}}">Projects Info</a></li>
 
@@ -135,7 +135,7 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="placeofbirth"><h4>Place of Birth</h4></label>
-                              <input  value="{{$person->place_of_birth}}" type="text" class="form-control" name="placeofbirth" id="upr" placeholder="enter place of birth">
+                              <input  value="{{$person->placeofbirth}}" type="text" class="form-control" name="placeofbirth" id="upr" placeholder="enter place of birth">
                               </div>
                       </div>
                   <div class="form-group">
@@ -149,7 +149,7 @@ function current_page($uri = "/") {
                         <div class="form-group">
                            <div class="col-xs-6">
                              <label for="mobile"><h4>Mobile</h4></label>
-                              <input value="{{$person->contact}}" type="text" class="form-control" name="mobile" id="upr" placeholder="enter mobile number">
+                              <input value="{{$person->phone}}" type="text" class="form-control" name="mobile" id="upr" placeholder="enter mobile number">
                           </div>
                       </div>
                       <div class="form-group">
@@ -165,7 +165,7 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Location</h4></label>
-                              <input value="{{$person->address}}" type="text" class="form-control" id="upr" placeholder="somewhere">
+                              <input value="{{$person->location}}" type="text" class="form-control" id="upr" placeholder="somewhere">
                           </div>
                       </div>
                       <div class="form-group">

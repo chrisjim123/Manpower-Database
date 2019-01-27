@@ -15,9 +15,9 @@ class CreateMasterfileTable extends Migration
     {
         Schema::create('Masterfile', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('last_name');
-            $table->text('first_name'); 
-            $table->text('middle_name');
+            $table->text('lastname');
+            $table->text('firstname'); 
+            $table->text('middlename');
             $table->text('gender'); 
             $table->text('birthdate');
             $table->text('placeofbirth'); 
@@ -28,13 +28,13 @@ class CreateMasterfileTable extends Migration
             $table->text('civil_status'); 
             $table->text('elem_school'); 
             $table->text('elemgrad'); 
-            $table->text('high school'); 
+            $table->text('highschool'); 
             $table->text('hsgrad'); 
             $table->text('college'); 
             $table->text('collegegrad'); 
             $table->text('sss'); 
             $table->text('phil'); 
-            $table->text('pag-ibig'); 
+            $table->text('pagibig'); 
             $table->text('tin'); 
             $table->text('employee_number'); 
             $table->text('card_number'); 

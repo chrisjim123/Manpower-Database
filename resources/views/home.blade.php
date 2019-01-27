@@ -85,8 +85,8 @@ function current_page($uri = "/") {
                             <th>Middle Name</th>
                             <th>Last Name</th>
                             <th>Gender</th>
-                            <th>Email</th>
-                            <th>Contact</th>
+                 <!--            <th>Email</th>
+                            <th>Contact</th> -->
                             <th>Action</th>
                         
                     </thead>
@@ -99,8 +99,8 @@ function current_page($uri = "/") {
                             <td id="upr">{{$per->middlename}}</td>
                             <td id="upr">{{$per->lastname}}</td>
                             <td id="upr">{{$per->gender}}</td>
-                            <td id="upr">{{$per->email}}</td>
-                            <td id="upr">{{$per->contact}}</td>
+                  <!--           <td id="upr">{{$per->email}}</td>
+                            <td id="upr">{{$per->phone}}</td> -->
                          
                             <td><a href="personalinfo/{{$per->id}}"><button class="btn btn-sm btn-success" title="view manpower info."><i class="glyphicon glyphicon-eye-open"></i></button></a><a href="editpersonalinfo/{{$per->id}}"><button class="btn btn-sm btn-primary" title="edit manpower info."><i class="glyphicon glyphicon-edit"></i></button></a><a href="delete/{{$per->id}}"><button class="btn btn-sm btn-danger" title="delete manpower record."><i class="glyphicon glyphicon-trash"></i></button></a><a href="sendsms/{{$per->id}}"><button class="btn btn-sm btn-success" title="send text message."><i class="glyphicon glyphicon-envelope"></i></button></td>
       

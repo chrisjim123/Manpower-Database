@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Manpower;
+use App\Masterfile;
 use Session;
 use Excel;
 use File;
@@ -221,6 +222,100 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
 
                 foreach ($data as $key => $value) {
                     $insert[] = [
+                    'lastname' => $value->lastname,
+                    'firstname' => $value->firstname,
+                    'middlename' => $value->middlename,
+                    'gender' => $value->gender,
+                    'birthdate' => $value->birthdate,
+                    'placeofbirth' => $value->placeofbirth,
+                    'phone' => $value->phone,
+                    'email' => $value->email,
+                    'location' => $value->location,
+                    'religion' => $value->religion,
+                    'civil_status' => $value->civilstatus,
+                    'elem_school' => $value->elemschool,
+                    'elemgrad' => $value->syelemgrad,
+                    'highschool' => $value->highschool,
+                    'hsgrad' => $value->syhsgrad,
+                    'college' => $value->college,
+                    'collegegrad' => $value->sycollegegrad,
+                    'sss' => $value->sss,
+                    'phil' => $value->philhealth,
+                    'pagibig' => $value->pagibig,
+                    'tin' => $value->tin,
+                    'employee_number' => $value->empoyeeno,
+                    'card_number' => $value->cardnumber,
+                    'company_name' => $value->companyname,
+                    'company_address' => $value->region,
+                    'company_tel' => $value->comptel,
+                    'company_email' => $value->compemail,
+                    'position' => $value->position,
+                    'datehired' => $value->datehired,
+                    'emp_status' => $value->employmentstatus,
+                    'created_at' => $time,
+                    'updated_at' => $time,
+                    'imagename' => $name,
+                    'imagefile' => $image,
+
+
+                    ];
+                }
+ 
+                if(!empty($insert)){
+ 
+                    $insertData = DB::table('masterfile')->insert($insert);
+                    if ($insertData) {
+                         session()->flash('status', 'New Data has successfully imported.');
+                          return back();
+                    }else {                        
+
+                        session()->flash('status', 'Error inserting the data..');
+                         return back();
+                    }
+                }
+            }
+ 
+            return back();
+ 
+        }else {
+
+            session()->flash('status', 'File is a '.$extension.' file.!! Please upload a valid xls/csv file..!!');
+             return back();
+        }
+    }
+
+
+    }
+
+
+  /*   public function doimport(Request $request)
+    {
+
+           date_default_timezone_set("Asia/Manila");
+           $time = date("Y-m-d h:i");
+
+     //validate the xls file
+        $this->validate($request, array(
+            'file'      => 'required'
+        ));
+     
+        if($request->hasFile('file')){
+            $extension = File::extension($request->file->getClientOriginalName());
+            if ($extension == "xlsx" || $extension == "xls" || $extension == "csv") {
+     
+                $path = $request->file->getRealPath();
+                $data = Excel::load($path, function($reader) {
+                })->get();
+                if(!empty($data) && $data->count()){
+     
+
+              $name= 'default';
+              $image= file_get_contents('defaultimage.png');
+              $image= base64_encode($image);
+
+
+                foreach ($data as $key => $value) {
+                    $insert[] = [
                     'firstname' => $value->firstname,
                     'middlename' => $value->middlename,
                     'lastname' => $value->lastname,
@@ -263,7 +358,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
 
     }
 
-
+*/
 
     
 
@@ -378,7 +473,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
     public function personalinfo($id)
     {
     /*	$person = Manpower::find($id);*/
-    	$person =DB::table('manpower')->find($id);
+    	$person =DB::table('masterfile')->find($id);
     	if ($person == true) {
     		return view('manpower.personalinfo', compact('person'));
     	}else{
@@ -389,7 +484,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
 
     public function educationinfo($id)	
     {
-    	$person =DB::table('manpower')->find($id);
+    	$person =DB::table('masterfile')->find($id);
     	if ($person == true) {
     		return view('manpower.educationinfo', compact('person'));
     	}else{
@@ -400,7 +495,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
 
     public function governinfo($id)
     {
-        $person =DB::table('manpower')->find($id);
+        $person =DB::table('masterfile')->find($id);
         if ($person == true) {
             return view('manpower.governinfo', compact('person'));
         }else{
@@ -410,7 +505,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
 
     public function companyinfo($id)
     {
-        $person =DB::table('manpower')->find($id);
+        $person =DB::table('masterfile')->find($id);
         if ($person == true) {
             return view('manpower.companyinfo', compact('person'));
         }else{
@@ -421,7 +516,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
 
     public function projectinfo($id)
     {
-        $person =DB::table('manpower')->find($id);
+        $person =DB::table('masterfile')->find($id);
         if ($person == true) {
          
             return view('manpower.projectsinfo', compact('person'));
@@ -433,7 +528,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
     
     public function others($id)
     {
-        $person =DB::table('manpower')->find($id);
+        $person =DB::table('masterfile')->find($id);
         if ($person == true) {
             return view('manpower.others', compact('person'));
         }else{
@@ -447,7 +542,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
         public function editpersonalinfo($id)
     {
     /*  $person = Manpower::find($id);*/
-      $person =DB::table('manpower')->find($id);
+      $person =DB::table('masterfile')->find($id);
       if ($person == true) {
         return view('manpower.editpersonalinfo', compact('person'));
       }else{
@@ -478,7 +573,7 @@ public function updateprofilepicture(Request $request,$id) {
         $image= base64_encode($image);
 
  
-        Manpower::where('id', '=', $id)->update(['imagefile' => $image, 'imagename' => $name]);
+        Masterfile::where('id', '=', $id)->update(['imagefile' => $image, 'imagename' => $name]);
         
         session()->flash('status', 'Profile picture has been updated successfully.');
         return back();
@@ -489,7 +584,7 @@ public function updateprofilepicture(Request $request,$id) {
         $image= file_get_contents('defaultimage.png');
         $image= base64_encode($image);
 
-        Manpower::where('id', '=', $id)->update(['firstname' => $firstname, 'imagefile' => $image, 'imagename' => $name]);
+        Masterfile::where('id', '=', $id)->update(['firstname' => $firstname, 'imagefile' => $image, 'imagename' => $name]);
   
         session()->flash('status', 'Profile picture has been updated successfully.');
         return back();
