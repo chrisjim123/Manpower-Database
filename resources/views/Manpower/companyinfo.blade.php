@@ -127,7 +127,7 @@ function current_page($uri = "/") {
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="phone"><h4>Postion</h4></label>
+                              <label for="phone"><h4>Position</h4></label>
                               <input style="border:none; background:transparent;" disabled="" value="{{$person->position}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>

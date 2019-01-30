@@ -554,10 +554,41 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
 
 
 
+/*
+public function resize_image($image, $max_resolution){
 
+  if(file_exists($image)){
 
+    $original_image = imagecreatefrompng($image);
 
+    //resolution
+    $original_width = imagesx($original_image);
+    $original_height = imagesy($original_image);
 
+    //try
+    $ratio = $max_resolution / $original_width;
+    $new_width = $max_resolution;
+    $new_height = $original_height*$ratio;
+
+    //if not working
+    if($new_height>$max_resolution){
+      $ratio = $max_resolution / $original_height;
+      $new_height = $max_resolution;
+      $new_width = $original_width*$ratio;
+    }
+
+    if($original_image){
+
+      $new_image = imagecreatetruecolor($new_width, $new_height);
+      imagecopyresampled($new, $ori, 0, 0, 0, 0, $ne, $new, $original_width, $original_height);
+
+      imagepng($new_image,$image,90);
+    }
+
+  }
+}
+
+*/
 
 
 public function updateprofilepicture(Request $request,$id) {
@@ -565,7 +596,103 @@ public function updateprofilepicture(Request $request,$id) {
 
       
 
-      if (!empty($_FILES['image']['name'])) {
+  if (!empty($_FILES['image']['name'])) {
+
+
+
+
+    if($_FILES['image']['type'] == 'image/jpg'){
+
+
+    $image= ($_FILES['image']['tmp_name']);
+    $max_resolution = '200';
+
+
+    $original_image = imagecreatefromjpeg($image);
+
+    //resolution
+    $original_width = imagesx($original_image);
+    $original_height = imagesy($original_image);
+
+    //try
+    $ratio = $max_resolution / $original_width;
+    $new_width = $max_resolution;
+    $new_height = $original_height*$ratio;
+
+    //if not working
+    if($new_height>$max_resolution){
+      $ratio = $max_resolution / $original_height;
+      $new_height = $max_resolution;
+      $new_width = $original_width*$ratio;
+    }
+
+    if($original_image){
+
+      $new_image = imagecreatetruecolor($new_width, $new_height);
+      imagecopyresampled($new_image, $original_image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
+
+      imagejpeg($new_image,$image,90);
+    }
+
+  
+
+       
+    }elseif ($_FILES['image']['type'] == 'image/png') {  
+
+/*
+    $image= ($_FILES['image']['tmp_name']);
+    $max_resolution = '200';
+
+
+    $original_image = imagecreatefrompng($image);
+
+    //resolution
+    $original_width = imagesx($original_image);
+    $original_height = imagesy($original_image);
+
+    //try
+    $ratio = $max_resolution / $original_width;
+    $new_width = $max_resolution;
+    $new_height = $original_height*$ratio;
+
+    //if not working
+    if($new_height>$max_resolution){
+      $ratio = $max_resolution / $original_height;
+      $new_height = $max_resolution;
+      $new_width = $original_width*$ratio;
+    }elseif ($new_height<$max_resolution) {
+      $ratio = $max_resolution / $original_height;
+      $new_height = $max_resolution;
+      $new_width = $original_width*$ratio;
+    }
+
+    if($original_image){
+
+      $new_image = imagecreatetruecolor($new_width, $new_height);
+      imagecopyresampled($new_image, $original_image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
+
+      imagepng($new_image,$image,90);
+    }
+
+      $image= addslashes($_FILES['image']['tmp_name']);
+        $name= addslashes($_FILES['image']['name']);
+        $image= file_get_contents($image);
+        $image= base64_encode($image);
+
+ 
+        Masterfile::where('id', '=', $id)->update(['imagefile' => $image, 'imagename' => $name]);
+        
+        session()->flash('status', 'Profile picture has been updated successfully.');
+        return back();
+  
+*/
+        session()->flash('status', 'Please select only .jpg file type.');
+        return back();
+
+
+    }
+
+      
 
         $image= addslashes($_FILES['image']['tmp_name']);
         $name= addslashes($_FILES['image']['name']);
@@ -577,16 +704,12 @@ public function updateprofilepicture(Request $request,$id) {
         
         session()->flash('status', 'Profile picture has been updated successfully.');
         return back();
-  
+
+
 
       }else{  
-        $name= 'default';
-        $image= file_get_contents('defaultimage.png');
-        $image= base64_encode($image);
-
-        Masterfile::where('id', '=', $id)->update(['firstname' => $firstname, 'imagefile' => $image, 'imagename' => $name]);
-  
-        session()->flash('status', 'Profile picture has been updated successfully.');
+       
+        session()->flash('status', 'You did not select any file.');
         return back();
 
   
