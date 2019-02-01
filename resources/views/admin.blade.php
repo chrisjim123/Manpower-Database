@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header"><i class="glyphicon glyphicon-home"> Home</i></div>
-
+ -->
  
+
 
 <?php
 function current_page($uri = "/") {
@@ -15,9 +16,11 @@ function current_page($uri = "/") {
 }
 ?>
  
-<center><h2>Welcome Guest!</h2></center>
-<br>
- 
+ <center><h2>Welcome Admin</h2></center>
+
+<div class="container bootstrap snippet">
+
+
 
                     <style>
 
@@ -33,19 +36,22 @@ function current_page($uri = "/") {
                                 display: inline; 
                             }
                     </style>
-                    
-            
+                        
+                    <div class="container">
                     <form action="{{ URL::to('/search') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">  
-          
-                       <div class="input-group">
+                    
+                    <div class="input-group">
+            
                         <input class="form-control" name="search" placeholder="Search here (First Name, Middle Name or Last Name)" type="text"><span class="input-group-btn"><button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button></span>
-                        </div>
+            
+                    </div>
+
                     </form>
-              
+                    </div>
  
                   
-<!--                <div class="container">
+               <div class="container">
                       <div class="form-group">
                            <div class="col-xs-12">  
                                 <br>
@@ -59,53 +65,23 @@ function current_page($uri = "/") {
                       </div>
                       </div>
 
-<hr> -->
+<hr>
 
-
-<br>
   <div class="container">
 
 
- 
-                   @if(isset($data))
-                    <table id="pagination" class="table table-hover table-striped table-responsive">
-                    <thead> 
-                            <th width="5px" align="left"><input type="checkbox" name="selector[]" id="chkall" onclick="return checkall('selector[]');"></th>
-                            <th>No</th>
-                            <th>First Name</th>
-                            <th>Middle Name</th>
-                            <th>Last Name</th>
-                            <th>Gender</th>
-                            <th>Email</th>
-                            <th>Contact</th>
-                            <th>Action</th>
-                        
-                    </thead>
-                    <tbody> 
-                     @foreach($data as $per)
-                    <tr>    
-                            <td width="5px"><input type="checkbox" name="selector[]" id="selector[]" value="{{$per->id}}"/></td>
-                            <td>{{$loop->index+1}}</td>
-                            <td id="upr">{{$per->firstname}}</td>
-                            <td id="upr">{{$per->middlename}}</td>
-                            <td id="upr">{{$per->lastname}}</td>
-                            <td id="upr">{{$per->gender}}</td>
-                            <td id="upr">{{$per->email}}</td>
-                            <td id="upr">{{$per->phone}}</td>
-                            <td><a href="personalinfo/{{$per->id}}"><button class="btn btn-sm btn-success" title="view manpower info."><i class="glyphicon glyphicon-eye-open"></i></button></a></td>
-<!--                             <td><a href="personalinfo/{{$per->id}}"><button class="btn btn-sm btn-success" title="view manpower info."><i class="glyphicon glyphicon-eye-open"></i></button></a><a href="editpersonalinfo/{{$per->id}}"><button class="btn btn-sm btn-primary" title="edit manpower info."><i class="glyphicon glyphicon-edit"></i></button></a><a href="delete/{{$per->id}}"><button class="btn btn-sm btn-danger" title="delete manpower record."><i class="glyphicon glyphicon-trash"></i></button></a><a href="sendsms/{{$per->id}}"><button class="btn btn-sm btn-success" title="send text message."><i class="glyphicon glyphicon-envelope"></i></button></td>
- -->      
-                    </tr>
-                    @endforeach
-                    </tbody>
-                    </table>
 
-         
-                    
-                    {{$data->links()}}
-                    @else
-                    {{ $message }}
-                    @endif
+
+
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
                </div> 

@@ -17,6 +17,15 @@ Route::get('/', 'PagesController@welcome');
 
 //Home Routes
 Auth::routes();
+Route::get('/admin/login', 'Auth\AdminLoginController@ShowLoginForm')->name('admin.login');
+Auth::routes();
+Route::get('/admin', 'AdminController@index');
+Auth::routes();
+Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+Auth::routes();
+Route::get('/admin', 'AdminController@index')->name('admin.dashboard'); 
+
+Auth::routes();
 Route::get('/home', 'PagesController@home')->name('home')->middleware('authenticated');
 
 //PagesController

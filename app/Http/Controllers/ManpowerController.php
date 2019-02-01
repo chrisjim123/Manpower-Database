@@ -110,7 +110,7 @@ $client->messages->create(
     public function addnewmanpowerrecord(Request $request)
     {
 
-        //create new record
+        //basic info
         $firstname = $request->input('first_name');
         $middlename = $request->input('middle_name');
         $lastname = $request->input('last_name');
@@ -119,70 +119,103 @@ $client->messages->create(
         $placeofbirth = $request->input('placeofbirth');
         $email = $request->input('email');
         $address = $request->input('address');
-        $contact = $request->input('mobile');
+        $phone = $request->input('mobile');
+        $religion = $request->input('religion');
+        $civil_status = $request->input('civil_status');
+
+        //educational
+        $elementary_school = $request->input('elementary_school');
+        $elem_school_year = $request->input('elem_school_year');
+        $high_school = $request->input('high_school');
+        $high_school_year = $request->input('high_school_year');
+        $college_school = $request->input('college_school');
+        $college_school_year = $request->input('college_school_year');
+
+        //government
+        $sss_number = $request->input('sss_number');
+        $philhealth_number = $request->input('philhealth_number');
+        $pagibig_number = $request->input('pagibig_number');
+        $tin_number = $request->input('tin_number');
+
+        //
+        $emp_num = $request->input('emp_num');
+        $card_num = $request->input('card_num');
+        $company_name = $request->input('company_name');
+        $company_address = $request->input('company_address');
+        $company_phone = $request->input('company_phone');
+        $company_email = $request->input('company_email');
+        $position = $request->input('position');
+        $date_hired = $request->input('date_hired');
+        $status = $request->input('status');
+
+
         date_default_timezone_set("Asia/Manila");
         $time = date("Y-m-d h:i");
 
 
-      if (!empty($_FILES['image']['name'])) {
+
+
+    if($_FILES['image']['type'] == 'image/jpg'){
+
+
+
+    $image= ($_FILES['image']['tmp_name']);
+    $max_resolution = '200';
+
+
+    $original_image = imagecreatefromjpeg($image);
+
+    //resolution
+    $original_width = imagesx($original_image);
+    $original_height = imagesy($original_image);
+
+    //try
+    $ratio = $max_resolution / $original_width;
+    $new_width = $max_resolution;
+    $new_height = $original_height*$ratio;
+
+    //if not working
+    if($new_height>$max_resolution){
+      $ratio = $max_resolution / $original_height;
+      $new_height = $max_resolution;
+      $new_width = $original_width*$ratio;
+    }
+
+    if($original_image){
+
+      $new_image = imagecreatetruecolor($new_width, $new_height);
+      imagecopyresampled($new_image, $original_image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
+
+      imagejpeg($new_image,$image,90);
+    }
+
+
+  
+    }elseif ($_FILES['image']['type'] == 'image/png') {  
+
+
+        session()->flash('status', 'Please select only .jpg file type.');
+        return back();
+       
+    }
+
 
         $image= addslashes($_FILES['image']['tmp_name']);
         $name= addslashes($_FILES['image']['name']);
         $sourceProperties = getimagesize($image);
         $image= file_get_contents($image);
         $image= base64_encode($image);
-        $image = imageResize($image,$sourceProperties[0],$sourceProperties[1]);
 
 
 
- function imageResize($imageSrc,$imageWidth,$imageHeight) {
-
-    $newImageWidth =192;
-    $newImageHeight =192;
-
-    $newImageLayer=imagecreatetruecolor($newImageWidth,$newImageHeight);
-    imagecopyresampled($newImageLayer,$image,0,0,0,0,$newImageWidth,$newImageHeight,$imageWidth,$imageHeight);
-
-    return $newImageLayer;
-}
-         $data = array('firstname'=>$firstname,"middlename"=>$middlename,"lastname"=>$lastname,"birthdate"=>$birthdate,"place_of_birth"=>$placeofbirth,"email"=>$email,"address"=>$address,"contact"=>$contact,"created_at"=>$time,"updated_at"=>$time,"gender"=>$gender,"imagefile"=>$image,"imagename"=>$name);
-        db::table('manpower')->insert($data);
+         $data = array('lastname'=>$lastname,"firstname "=>$firstname,"middlename"=>$middlename,"gender"=>$gender,"birthdate"=>$birthdate,"placeofbirth"=>$placeofbirth,"phone"=>$phone,"email"=>$email,"location"=>$address,"religion"=>$religion,"civil_status"=>$civil_status,"elem_school"=>$elementary_school,"elemgrad"=>$elem_school_year,"highschool"=>$high_school,"hsgrad"=>$high_school_year,"college"=>$college_school,"collegegrad"=>$college_school_year,"sss"=>$sss_number,"phil"=>$philhealth_number,"pagibig"=>$pagibig_number,"tin"=>$tin_number,"employee_number"=>$employee_number,"card_number"=>$card_number,"company_name"=>$company_name, "company_address"=>$company_address,"company_tel"=>$company_phone,"company_email"=>$company_email,"position"=>$position, "datehired"=>$datehired,"emp_status"=>$status,"created_at"=>$time,"updated_at"=>$time,"imagename"=>$name,"imagefile"=>$image);
+        db::table('masterfile')->insert($data);
 
         session()->flash('status', 'New Record has been Successfully Added.');
         return redirect('/home');
-  
-
-      }else{
-        $name= 'default';
-        $image= file_get_contents('defaultimage.png');
-        $image= base64_encode($image);
-
-        $data = array('firstname'=>$firstname,"middlename"=>$middlename,"lastname"=>$lastname,"birthdate"=>$birthdate,"place_of_birth"=>$placeofbirth,"email"=>$email,"address"=>$address,"contact"=>$contact,"created_at"=>$time,"updated_at"=>$time,"gender"=>$gender,"imagefile"=>$image,"imagename"=>$name);
-        db::table('manpower')->insert($data);
-
-        session()->flash('status', 'New Record has been Successfully Added.');
-        return redirect('/home');
-  
-        }
-
-
-       
-    }
 
 
 
-
-
-
-public function imageResize($imageSrc,$imageWidth,$imageHeight) {
-
-    $newImageWidth =192;
-    $newImageHeight =192;
-
-    $newImageLayer=imagecreatetruecolor($newImageWidth,$newImageHeight);
-    imagecopyresampled($newImageLayer,$imageSrc,0,0,0,0,$newImageWidth,$newImageHeight,$imageWidth,$imageHeight);
-
-    return $newImageLayer;
 }
 
 
@@ -243,7 +276,7 @@ public function imageResize($imageSrc,$imageWidth,$imageHeight) {
                     'phil' => $value->philhealth,
                     'pagibig' => $value->pagibig,
                     'tin' => $value->tin,
-                    'employee_number' => $value->empoyeeno,
+                    '' => $value->empoyeeno,
                     'card_number' => $value->cardnumber,
                     'company_name' => $value->companyname,
                     'company_address' => $value->region,

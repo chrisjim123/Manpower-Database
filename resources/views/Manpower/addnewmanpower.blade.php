@@ -43,7 +43,7 @@ function current_page($uri = "/") {
                       <div class="container">
                       <label><h4 class="text-center">Upload Profile Picture</h4></label>
                      <!--  <input type="file" class="text-left left-block file-upload"> -->
-                     <input type="file" style=" font-size:19px; height:28.5px;  border: 1px;" name="image"/><br/>
+                     <input required type="file" style=" font-size:19px; height:28.5px;  border: 1px;" name="image"/><br/>
  
   
                       </div><hr>
@@ -103,7 +103,7 @@ function current_page($uri = "/") {
 
                       <div class="form-group">
                           <div class="col-xs-6">
-                             <label for="mobile"><h4>Mobile</h4></label>
+                             <label for="mobile"><h4>Phone No.</h4></label>
                               <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
                           </div>
                       </div>
@@ -121,9 +121,21 @@ function current_page($uri = "/") {
                               <input nam type="text" class="form-control" name="address" id="address" placeholder="somewhere" title="enter a location">
                           </div>
                       </div>
+                <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="Religion"><h4>Religion</h4></label>
+                              <input nam type="text" class="form-control" name="religion" id="religion" placeholder="Religion" title="enter a Religion">
+                          </div>
+                      </div>
 
-
-
+           <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="civil_status"><h4>Civil Status</h4></label>
+                              <input nam type="text" class="form-control" name="civil_status" id="civil_status" placeholder="Civil Status" title="enter a Civil Status">
+                          </div>
+                      </div>
 
 
 
@@ -220,10 +232,26 @@ function current_page($uri = "/") {
 
 
 <!--Company Information -->
+
+                    <div class="form-group">      
+                    <div class="col-xs-6">
+                              <label for="emp_num"><h4>Employee Number</h4></label>
+                              <input type="text" class="form-control" name="emp_num" id="emp_num" placeholder="enter Employee Number" title="enter your employee number." required>
+                          </div>
+                      </div>
+
+                                          <div class="form-group">      
+                    <div class="col-xs-6">
+                              <label for="card_num"><h4>Card Number</h4></label>
+                              <input type="text" class="form-control" name="card_num" id="card_num" placeholder="enter Card Number" title="enter your Card Number." required>
+                          </div>
+                      </div>
+
+
                     <div class="form-group">      
                     <div class="col-xs-6">
                               <label for="company_name"><h4>Company Name</h4></label>
-                              <input type="text" class="form-control" name="company_name" id="company_name" placeholder="enter company name" title="enter your company." required>
+                              <input type="text" class="form-control" name="    " id="company_name" placeholder="enter company name" title="enter your company." required>
                           </div>
                       </div>
                       <div class="form-group">
@@ -249,18 +277,28 @@ function current_page($uri = "/") {
                           </div>
                       </div>
 
+
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="start_date"><h4>Start Date</h4></label>
-                              <input type="date" class="form-control" name="start_date" id="start_date" placeholder="enter start date" title="enter start date." required>
+                              <label for="position"><h4>Position</h4></label>
+                              <input type="text" class="form-control" name="position" id="position" placeholder="enter Position" title="enter Position." required>
+                          </div>
+                      </div>
+
+
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="date_hired"><h4>Date Hired</h4></label>
+                              <input type="date" class="form-control" name="date_hired" id="date_hired" placeholder="enter Date Hired" title="enter Date Hired." required>
                           </div>
                       </div>
           
-                      <div class="form-group" hidden>
+                      <div class="form-group">
                           <div class="col-xs-6">
-                             <label for="status"><h4>Status</h4></label>
-                              <input value="active" type="text" class="form-control" name="status" id="status">
+                             <label for="status"><h4>Employee Status</h4></label>
+                              <input disabled="" value="Active" type="text" class="form-control" name="status" id="status">
                           </div>
                       </div>
 

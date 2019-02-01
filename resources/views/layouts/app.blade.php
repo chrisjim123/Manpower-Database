@@ -74,7 +74,7 @@
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->usertype }}  <!-- <span class="caret"></span> -->
+                                    {{ Auth::user()->name }}  <!-- <span class="caret"></span> -->
                                 </a>
 
 
@@ -97,7 +97,7 @@
         </nav>
 
         <main class="py-4">
-                <div class="card-body">
+        <!--         <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -105,7 +105,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    </div>
+                    </div> -->
             @yield('content')
         </main>
     </div>
