@@ -1,4 +1,28 @@
-@extends('layouts.app')
+@extends('layouts.guest')
+
+
+@section('contentheader')
+
+
+  <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Manpower List
+            <small>Educational Info</small>
+          </h1>
+
+
+       <ol class="breadcrumb">
+            <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Educational Info</li>
+          </ol>
+
+
+   
+        </section>
+
+@endsection
+
 
 @section('content')
 
@@ -11,12 +35,11 @@ function current_page($uri = "/") {
 ?>
 
 
-
-<div class="container bootstrap snippet">
+ 
     <div class="row">
         <div class="col-sm-10"><h1>{{$person->firstname}} {{$person->lastname}}</h1></div>
-                <div class="col-sm-2"><a href="{{ url('/home')}}"  class="pull-right"><button class="btn btn-md btn-success"><i class="glyphicon glyphicon-home"  {{ (current_page("home")) ? 'class=active' : '' }}></i> Home</button></a></div>
-        <!-- <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" style="size:100px;" src="http://www.gravatar.com/avata?s=100"></a></div>
+<!--                 <div class="col-sm-2"><a href="{{ url('/home')}}"  class="pull-right"><button class="btn btn-md btn-success"><i class="glyphicon glyphicon-home"  {{ (current_page("home")) ? 'class=active' : '' }}></i> Home</button></a></div>
+ -->        <!-- <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" style="size:100px;" src="http://www.gravatar.com/avata?s=100"></a></div>
  -->    </div>
     <div class="row">
         <div class="col-sm-3"><!--left col-->
@@ -63,9 +86,9 @@ function current_page($uri = "/") {
  
                 <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/companyinfo')}}/{{$person->id}}">Company Info</a></li>
                 
-                <li {{ (current_page("home")) ? 'class=active' : '' }}><a href="{{ url('/projectinfo')}}/{{$person->id}}">Projects Info</a></li>
+                <li {{ (current_page("projectinfo")) ? 'class=active' : '' }}><a href="{{ url('/projectinfo')}}/{{$person->id}}">Projects Info</a></li>
 
-                <li {{ (current_page("home")) ? 'class=active' : '' }}><a href="{{ url('/Others')}}/{{$person->id}}">Others</a></li>
+                <li {{ (current_page("Others")) ? 'class=active' : '' }}><a href="{{ url('/Others')}}/{{$person->id}}">Others</a></li>
 
               </ul>
 
@@ -115,13 +138,13 @@ function current_page($uri = "/") {
                           </div>
                       </div>
                       
-                      <div class="form-group">
+                   <!--    <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
                                 <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-edit"></i> Edit</button>
-<!--                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
- -->                            </div>
-                      </div>
+                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div> -->
                 </form>
                
      

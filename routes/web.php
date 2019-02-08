@@ -56,7 +56,7 @@ Route::get('/companyinfo/{id}', 'ManpowerController@companyinfo')->middleware('a
 Auth::routes();	
 Route::get('/projectinfo/{id}', 'ManpowerController@projectinfo')->middleware('authenticated');
 Auth::routes();	
-Route::get('/others/{id}', 'ManpowerController@others')->middleware('authenticated');
+Route::get('/Others/{id}', 'ManpowerController@others')->middleware('authenticated');
 
 //Manpower Editing
 Auth::routes();	
