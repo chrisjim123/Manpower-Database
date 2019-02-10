@@ -60,12 +60,17 @@ Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 
  
 /*<!-- Route group -->*/
-$router->group(['middleware' => 'auth'], function() {
-
+/*$router->group(['middleware' => 'auth'], function() {
+*/
 
   /*  <!-- Admin Only -->*/
-    if(Auth::check()){
+/*    if(Auth::check()){
         if ( Auth::user()->usertype == "Administrator" ){
+
+*/
+//Admin Home Routes
+Auth::routes();
+Route::get('/adminhome', 'AdminController@adminhome')->name('adminhome')->middleware('authenticated');
 
 
 //PagesController
@@ -120,8 +125,8 @@ Route::any('/album', 'AlbumController@index')->middleware('authenticated');
 Auth::routes();	
 Route::any('/uploadbanner', 'AlbumController@uploadbanner')->middleware('authenticated');
 
-
-        }
+/*
     }
 
-});
+	}
+});*/

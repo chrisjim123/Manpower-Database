@@ -95,7 +95,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div> -->
                     <div class="pull-right">
-                      <a href="{{ route('logout') }}" class="btn btn-default btn-flat" style="color:black;"><i class="glyphicon glyphicon-podlock"></i> Sign Out</a>                   </div>
+                      <a href="{{ route('logout') }}" class="btn btn-default btn-flat" style="color:black;"><i class="glyphicon glyphicon-podlock"></i> Sign Out</a>                   
+                      </div>
                   </li>
          
                 </ul>
@@ -137,9 +138,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
-            <li class="header">Main Navigation</li>
+            <li class="header">MAIN NAVIGATION</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="/home"><i class="fa fa-link"></i> <span>Manpower List</span></a></li>
+            <li class="active"><a href="/home"><i class="fa fa-users"></i> <span>Manpower</span></a></li>
  
       
           </ul><!-- /.sidebar-menu -->
