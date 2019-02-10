@@ -7,8 +7,8 @@
   <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Manpower List
-            <small>Company Info</small>
+            Company Info
+            <small>Preview</small>
           </h1>
 
 
@@ -90,12 +90,13 @@ function current_page($uri = "/") {
               </ul>
 
                   <hr>
-                  <form class="form" action="" method="post" id="registrationForm">
+
+                  
                         <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>Employee Number</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->employee_number}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->employee_number}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>
 
@@ -111,14 +112,14 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="first_name"><h4>Company Name</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->company_name}}" type="text" class="form-control" name="first_name" id="first_name" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->company_name}}" type="text" class="form-control" name="first_name" id="first_name" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                             <label for="last_name"><h4>Region</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->company_address}}" type="text" class="form-control" name="last_name" id="last_name" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->company_address}}" type="text" class="form-control" name="last_name" id="last_name" placeholder="None">
                           </div>
                       </div>
           
@@ -126,14 +127,14 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>Company Telephone</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->company_tel}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->company_tel}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4>Company Email</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->company_email}}" type="text" class="form-control" name="mobile" id="mobile" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->company_email}}" type="text" class="form-control" name="mobile" id="mobile" placeholder="None">
                           </div>
                       </div>
 
@@ -141,21 +142,21 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>Position</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->position}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->position}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>
                         <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>Date Hired</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->datehired}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->datehired}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>Status</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->emp_status}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->emp_status}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>
 
@@ -169,8 +170,8 @@ function current_page($uri = "/") {
                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                             </div>
                       </div> -->
-                </form>
-
+ 
+ 
 
 
               </div>

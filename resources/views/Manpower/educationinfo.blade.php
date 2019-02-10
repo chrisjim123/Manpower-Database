@@ -7,8 +7,8 @@
   <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Manpower List
-            <small>Educational Info</small>
+            Educational Info
+            <small>Preview</small>
           </h1>
 
 
@@ -98,14 +98,14 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="first_name"><h4>Elementary School</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->elem_school}}" type="text" class="form-control" name="first_name" id="first_name" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->elem_school}}" type="text" class="form-control" name="first_name" id="first_name" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                             <label for="last_name"><h4>S.Y. Graduated</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->elemgrad}}" type="text" class="form-control" name="last_name" id="last_name" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->elemgrad}}" type="text" class="form-control" name="last_name" id="last_name" placeholder="None">
                           </div>
                       </div>
           
@@ -113,28 +113,28 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>High School</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->highschool}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->highschool}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4>S.Y. Graduated</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->hsgrad}}" type="text" class="form-control" name="mobile" id="mobile" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->hsgrad}}" type="text" class="form-control" name="mobile" id="mobile" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>College</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->college}}" type="email" class="form-control" name="email" id="email" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->college}}" type="email" class="form-control" name="email" id="email" placeholder="None">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>S.Y. Graduated</h4></label>
-                              <input style="border:none; background:transparent;" disabled="" value="{{$person->collegegrad}}" type="email" class="form-control" id="location" placeholder="None">
+                              <input style="border:none; background:white;" disabled="" value="{{$person->collegegrad}}" type="email" class="form-control" id="location" placeholder="None">
                           </div>
                       </div>
                       

@@ -19,10 +19,17 @@ use Album;
 
 class PagesController extends Controller
 {
+
+  public function logout(){
+        Session::flush();
+   /*     Auth::guard($this->getGuard())->logout();*/
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+    }
+    
    
     public function welcome()
  	{
- 		$result =DB::table('banner')->paginate(25);
+ 		$result =DB::table('banner')->paginate(3);
         return view('welcome', ["data"=>$result]);
 /* 		return view('welcome');*/
  	}	
@@ -30,7 +37,7 @@ class PagesController extends Controller
  	public function home()
  	{
 
- 		$result =DB::table('masterfile')->paginate(25);
+ 		$result =DB::table('masterfile')->paginate(3);
         return view('home', ["data"=>$result]);
  	}
 
@@ -43,7 +50,7 @@ class PagesController extends Controller
         	$data = Masterfile::where('firstname', 'LIKE', '%'.$search.'%')
         					->orWhere('middlename', 'LIKE', '%'.$search.'%')
         					->orWhere('lastname', 'LIKE', '%'.$search.'%')
-        					->paginate(5)
+        					->paginate(3)
         					->setpath('');
             $data->appends(array('search' => Input::get('search'),));
 			if(count($data)>0){
@@ -52,7 +59,7 @@ class PagesController extends Controller
 			return view('home')->withMessage("No Results found!");
         }
        	else{
-       		$result =DB::table('masterfile')->paginate(25);
+       		$result =DB::table('masterfile')->paginate(3);
         	return view('home', ["data"=>$result]);
        	}
  	}

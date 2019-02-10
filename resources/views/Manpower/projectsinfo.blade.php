@@ -7,8 +7,8 @@
   <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Manpower List
-            <small>Personal Info</small>
+            Project Info
+            <small>Preview</small>
           </h1>
 
 
@@ -95,8 +95,82 @@ function current_page($uri = "/") {
               </ul>
 
                   <hr>
-                  <form class="form" action="" method="post" id="registrationForm">
-                     
+ 
+
+
+<div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Project List</h3>
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th>Nos.</th>
+                      <th>Status</th>
+                      <th>Project Name</th>
+                      <th>Training Date</th>
+                      <th>Break Date</th>
+                      <th>Project Duration</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td><span class="label label-primary">Ongoing</span></td>
+                      <td>Nescafe BA On Aisle 2019</td>
+                      <td>12-27-2019</td>
+                      <td>01-23-2019</td>
+                      <!-- <td><span class="label label-success">Approved</span></td> -->
+                      <td>January-June 2019</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td><span class="label label-primary">Ongoing</span></td>
+                      <td>Nescafe Classic Strong 2019</td>
+                      <td>12-27-2019</td>
+                      <td>01-23-2019</td>
+                      <!-- <td><span class="label label-success">Approved</span></td> -->
+                      <td>January-June 2019</td>
+
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td><span class="label label-primary">Ongoing</span></td>
+                      <td>Barangay Swap Sarap 2019</td>
+                      <td>12-27-2019</td>
+                      <td>01-23-2019</td>
+                      <!-- <td><span class="label label-success">Approved</span></td> -->
+                      <td>January-June 2019</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td><span class="label label-primary">Ongoing</span></td>
+                      <td>Nescafe Suki Seller 2019</td>
+                      <td>12-27-2019</td>
+                      <td>01-23-2019</td>
+                      <td>January-June 2019</td>
+                    </tr>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+          </div>
+
+
+
+
+
+
+
+
 
 <!--  -->
 
@@ -108,8 +182,7 @@ function current_page($uri = "/") {
                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                             </div>
                       </div> -->
-                </form>
-
+       
 
 
 

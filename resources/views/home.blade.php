@@ -70,7 +70,7 @@ function current_page($uri = "/") {
                 <div class="widget-user-image">
                   <img class="img-circle" src="data:image;base64,{{$per->imagefile}}" alt="User Avatar">
                 </div>
-                <div class="box-footer">
+                <div class="box-footer bg-gray-active">
                   <div class="row">
                     <div class="col-sm-12 border-center">
                       <div class="description-block">

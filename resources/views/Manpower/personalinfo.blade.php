@@ -7,8 +7,8 @@
   <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Manpower List
-            <small>Personal Info</small>
+            Basic Info
+            <small>Preview</small>
           </h1>
 
 
@@ -104,14 +104,14 @@ function current_page($uri = "/") {
 
                           <div class="col-xs-6">
                               <label for="first_name"><h4>First name</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->firstname}}" type="text" class="form-control" name="first_name" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->firstname}}" type="text" class="form-control" name="first_name" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                             <label for="middle_name"><h4>Middle name</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->middlename}}" type="text" class="form-control" name="last_name" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->middlename}}" type="text" class="form-control" name="last_name" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
           
@@ -119,7 +119,7 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                             <label for="last_name"><h4>Last name</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->lastname}}" type="text" class="form-control" name="last_name" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->lastname}}" type="text" class="form-control" name="last_name" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
           
@@ -127,34 +127,34 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="gender"><h4>Gender</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->gender}}" type="text" class="form-control" name="gender" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->gender}}" type="text" class="form-control" name="gender" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="birthdate"><h4>Birth Date</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->birthdate}}" type="text" class="form-control" name="birthdate" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->birthdate}}" type="text" class="form-control" name="birthdate" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="placeofbirth"><h4>Place of Birth</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->placeofbirth}}" type="text" class="form-control" name="placeofbirth" id="upr" placeholder="None" disabled=""></div>
+                              <input style="border:none; background:white;" value="{{$person->placeofbirth}}" type="text" class="form-control" name="placeofbirth" id="upr" placeholder="None" disabled=""></div>
                       </div>
    
                         <div class="form-group">
                            <div class="col-xs-6">
                              <label for="phone"><h4>Mobile</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->phone}}" type="text" class="form-control" name="phone" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->phone}}" type="text" class="form-control" name="phone" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Email</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->email}}" type="email" class="form-control" name="email" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->email}}" type="email" class="form-control" name="email" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
 
@@ -163,19 +163,19 @@ function current_page($uri = "/") {
                           
                           <div class="col-xs-6">
                               <label for="location "><h4>Location</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->location}}" type="text" class="form-control" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->location}}" type="text" class="form-control" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
                       <div class="form-group">
                            <div class="col-xs-6">
                               <label for="Religion"><h4>Religion</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->religion}}" type="text" class="form-control" name="Religion" id="upr" placeholder="None" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->religion}}" type="text" class="form-control" name="Religion" id="upr" placeholder="None" disabled="">
                           </div>
                       </div>
                       <div class="form-group">
                          <div class="col-xs-6">
                             <label for="password2"><h4>Civil Status</h4></label>
-                              <input style="border:none; background:transparent;" value="{{$person->civil_status}}" type="text" class="form-control" name="Single" id="upr" placeholder="" disabled="">
+                              <input style="border:none; background:white;" value="{{$person->civil_status}}" type="text" class="form-control" name="Single" id="upr" placeholder="" disabled="">
                           </div>
                       </div>
             

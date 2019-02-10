@@ -7,8 +7,8 @@
   <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Manpower List
-            <small>Manpower Documents</small>
+            Manpower Other Docs
+            <small>Preview</small>
           </h1>
 
 
@@ -92,10 +92,94 @@ function current_page($uri = "/") {
               </ul>
 
                   <hr>
-                  <form class="form" action="" method="post" id="registrationForm">
-                      
-                     
-                </form>
+ 
+
+
+
+
+
+<div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Manpower Documents</h3>
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                      <div class="input-group-btn">
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th>Action</th>
+                      <th>Description</th>
+                      <th>Date Uploaded</th>
+                 
+                    </tr>
+                    <tr>
+ 
+                      <td><button class="btn btn-success">Download</button></td>
+                      <td>SSS</td>
+                      <td>01-20-2019</td>
+
+                    </tr>
+                    <tr>
+  
+                      <td><button class="btn btn-success">Download</button></td>
+                      <td>PhilHealth</td>
+                      <td>01-20-2019</td>
+         
+ 
+                      <!-- <td><span class="badge bg-yellow">70%</span></td> -->
+                    </tr>
+                                        <tr>
+ 
+                      <td><button class="btn btn-success">Download</button></td>
+                      <td>Pag-ibig</td>
+                      <td>01-20-2019</td>
+       
+                      <!-- <td><span class="badge bg-yellow">70%</span></td> -->
+                    </tr>
+                                        <tr>
+     
+                      <td><button class="btn btn-success">Download</button></td>
+                      <td>TIN</td>
+                      <td>01-20-2019</td>
+ 
+ 
+                      <!-- <td><span class="badge bg-yellow">70%</span></td> -->
+                    </tr>
+                                        <tr>
+ 
+                      <td><button class="btn btn-success">Download</button></td>
+                      <td>NBI</td>
+                      <td>01-20-2019</td>
+    
+
+                      <!-- <td><span class="badge bg-yellow">70%</span></td> -->
+                    </tr>
+                                        <tr>
+ 
+                      <td><button class="btn btn-success">Download</button></td>
+                      <td>Health Card</td>
+                      <td>01-20-2019</td>
+        <!--               <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                        </div>
+                      </td> -->
+ 
+                      <!-- <td><span class="badge bg-yellow">70%</span></td> -->
+                    </tr>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+          </div>
+
+ 
               </div>
                
               </div><!--/tab-pane-->

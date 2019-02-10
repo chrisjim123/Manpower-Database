@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Logo -->
         <a href="{{ url('/') }}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>M</b>LT</span>
+          <span class="logo-mini"><b>M</b>DB</span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>Manpower</b>Database</span>
         </a>
@@ -95,8 +95,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div> -->
                     <div class="pull-right">
-                      <a href="{{ route('logout') }}" class="btn btn-danger btn-flat"><i class="glyphicon glyphicon-podlock"></i> Sign out</a>                   </div>
+                      <a href="{{ route('logout') }}" class="btn btn-default btn-flat" style="color:black;"><i class="glyphicon glyphicon-podlock"></i> Sign Out</a>                   </div>
                   </li>
+         
                 </ul>
               </li>
               <!-- Control Sidebar Toggle Button -->
@@ -138,7 +139,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="sidebar-menu">
             <li class="header">Main Navigation</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Manpower List</span></a></li>
+            <li class="active"><a href="/home"><i class="fa fa-link"></i> <span>Manpower List</span></a></li>
  
       
           </ul><!-- /.sidebar-menu -->

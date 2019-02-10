@@ -11,11 +11,42 @@
 |
 */
 
-//Welcom Route
+
+
+/*NO RESTRICTIONS*/
+
+
+//Logout
+Auth::routes();
+Route::get('/logout', 'PagesController@logout')->name('logout')->middleware('authenticated');
+
+//Welcome Route
 Auth::routes();
 Route::get('/', 'PagesController@welcome');
 
 //Home Routes
+Auth::routes();
+Route::get('/home', 'PagesController@home')->name('home')->middleware('authenticated');
+
+//Search
+Auth::routes();
+Route::any('/search', 'PagesController@search')->middleware('authenticated');
+
+//View Manpower
+Auth::routes();
+Route::get('/personalinfo/{id}', 'ManpowerController@personalinfo')->middleware('authenticated');
+Auth::routes();
+Route::get('/educationinfo/{id}', 'ManpowerController@educationinfo')->middleware('authenticated');
+Auth::routes();	
+Route::get('/governinfo/{id}', 'ManpowerController@governinfo')->middleware('authenticated');
+Auth::routes();	
+Route::get('/companyinfo/{id}', 'ManpowerController@companyinfo')->middleware('authenticated');
+Auth::routes();	
+Route::get('/projectinfo/{id}', 'ManpowerController@projectinfo')->middleware('authenticated');
+Auth::routes();	
+Route::get('/Others/{id}', 'ManpowerController@others')->middleware('authenticated');
+
+//Admin Stuff
 Auth::routes();
 Route::get('/admin/login', 'Auth\AdminLoginController@ShowLoginForm')->name('admin.login');
 Auth::routes();
@@ -25,12 +56,19 @@ Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.logi
 Auth::routes();
 Route::get('/admin', 'AdminController@index')->name('admin.dashboard'); 
 
-Auth::routes();
-Route::get('/home', 'PagesController@home')->name('home')->middleware('authenticated');
+
+
+ 
+/*<!-- Route group -->*/
+$router->group(['middleware' => 'auth'], function() {
+
+
+  /*  <!-- Admin Only -->*/
+    if(Auth::check()){
+        if ( Auth::user()->usertype == "Administrator" ){
+
 
 //PagesController
-Auth::routes();
-Route::any('/search', 'PagesController@search')->middleware('authenticated');
 Auth::routes();
 Route::any('delete/{id}', 'PagesController@destroy')->middleware('authenticated');
 Auth::routes();
@@ -45,18 +83,6 @@ Auth::routes();
 Route::post('/doimport', 'ManpowerController@doimport')->middleware('authenticated');
 Auth::routes();
 Route::get('/uploadmanpower', 'ManpowerController@uploadmanpower')->middleware('authenticated');
-Auth::routes();
-Route::get('/personalinfo/{id}', 'ManpowerController@personalinfo')->middleware('authenticated');
-Auth::routes();
-Route::get('/educationinfo/{id}', 'ManpowerController@educationinfo')->middleware('authenticated');
-Auth::routes();	
-Route::get('/governinfo/{id}', 'ManpowerController@governinfo')->middleware('authenticated');
-Auth::routes();	
-Route::get('/companyinfo/{id}', 'ManpowerController@companyinfo')->middleware('authenticated');
-Auth::routes();	
-Route::get('/projectinfo/{id}', 'ManpowerController@projectinfo')->middleware('authenticated');
-Auth::routes();	
-Route::get('/Others/{id}', 'ManpowerController@others')->middleware('authenticated');
 
 //Manpower Editing
 Auth::routes();	
@@ -82,17 +108,20 @@ Route::get('/export_excel/xlsx', 'ManpowerController@xlsx')->name('export_excel.
 Auth::routes();	
 Route::get('/export_excel/csv', 'ManpowerController@csv')->name('export_excel.csv')->middleware('authenticated');
 
-
-
 //Messaging
 Auth::routes();
 Route::get('/createsms', 'ManpowerController@createsms')->middleware('authenticated');
 Auth::routes();
 Route::post('/sendsms', 'ManpowerController@sendsms')->middleware('authenticated');
 
-
 //Photo Gallery
 Auth::routes();	
 Route::any('/album', 'AlbumController@index')->middleware('authenticated');
 Auth::routes();	
 Route::any('/uploadbanner', 'AlbumController@uploadbanner')->middleware('authenticated');
+
+
+        }
+    }
+
+});
