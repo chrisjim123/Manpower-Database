@@ -115,10 +115,10 @@
 
 
                 <div class="title m-b-md responsive">
-                    Manpower Database
+                    ASI Manpower Database
                 </div>
 
-
+<!-- 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
  
   <ol class="carousel-indicators">
@@ -134,10 +134,10 @@
               <div class="carousel-caption d-none d-md-block">
 <!--                  <h3>{{ $person->imagefile }}</h3>
                  <p>{{ $person->imagename }}</p> -->
-              </div>
-       </div>
-    @endforeach
-  </div>
+  <!--             </div>
+       </div> -->
+ <!--    @endforeach -->
+<!--   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -146,16 +146,15 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-
-
+</div> -->
+ 
 <br>
 
 
                 <div class="links">
                 <!--     <a href="https://nova.laravel.com">Photos</a> -->
-                    <a href="https://forge.laravel.com">About</a>
-                    <a href="https://github.com/laravel/laravel">Contact</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
                    <!--  <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>

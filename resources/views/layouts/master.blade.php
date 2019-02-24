@@ -22,6 +22,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('adminlte/dist/css/AdminLTE.min.css')}}">
  
+     <!-- fullCalendar 2.2.5-->
+  <link rel="stylesheet" href="{{ asset('adminlte/plugins/fullcalendar/fullcalendar.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('adminlte/plugins/fullcalendar/fullcalendar.print.css')}}" media="print">
+    <!-- Theme style -->
+
   <link rel="stylesheet" href="{{ asset('adminlte/dist/css/skins/skin-blue.min.css')}}">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -118,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                        <a href="{{ route('logout') }}" class="btn btn-default btn-flat" style="color:black;"><i class="glyphicon glyphicon-podlock"></i> Sign Out</a>                   
+                        <a href="{{ route('adminlogout') }}" class="btn btn-default btn-flat" style="color:black;"><i class="glyphicon glyphicon-podlock"></i> Sign Out</a>                   
                     </div>
                   </li>
                 </ul>
@@ -246,6 +251,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('adminlte/bootstrap/js/bootstrap.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/app.min.js')}}"></script>
+
+     <!-- fullCalendar 2.2.5 -->
+      <script src="{{ asset('adminlte/plugins/moment.min.js')}}"></script>
+      <script src="{{ asset('adminlte/plugins/fullcalendar/fullcalendar.min.js')}}"></script>
+
 
   </body>
 </html>

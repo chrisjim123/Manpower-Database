@@ -73,7 +73,7 @@ function current_page($uri = "/") {
                   <div class="row">
                     <div class="col-sm-12 border-center">
                       <div class="description-block">
-                        <a href="personalinfo/{{$per->id}}"><button class="btn btn-sm btn-success"><i class="glyphicon glyphicon-search"  {{ (current_page("home")) ? 'class=active' : '' }}></i> View</button></a>
+                        <a href="adminpersonalinfo/{{$per->id}}"><button class="btn btn-sm btn-success"><i class="glyphicon glyphicon-search"  {{ (current_page("home")) ? 'class=active' : '' }}></i> View</button></a>
                         <span class="description-text"> </span>
                       </div> 
                     </div> 

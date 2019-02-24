@@ -6,7 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
+use App\Manpower;
 use App\Masterfile;
+use App\Manpowerdocs;
+use Session;
+use Excel;
+use File;
+use Album;
 
 class AdminController extends Controller
 {
@@ -72,4 +78,143 @@ public function index()
 
 
 
+ public function adminlogout(){
+        Session::flush();
+   /*     Auth::guard($this->getGuard())->logout();*/
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+    }
+
+
+public function event(){
+    return view('Admin.event');
 }
+
+
+
+
+
+    public function personalinfo($id)
+    {
+    /*  $person = Manpower::find($id);*/
+      $person =DB::table('masterfile')->find($id);
+      if ($person == true) {
+        return view('admin.manpower.personalinfo', compact('person'));
+      }else{
+         return redirect('/admin');
+      }
+  
+    }
+
+    public function educationinfo($id)  
+    {
+      $person =DB::table('masterfile')->find($id);
+      if ($person == true) {
+        return view('admin.manpower.educationinfo', compact('person'));
+      }else{
+         return redirect('/admin');
+      }
+
+    }
+
+    public function governinfo($id)
+    {
+        $person =DB::table('masterfile')->find($id);
+        if ($person == true) {
+            return view('admin.manpower.governinfo', compact('person'));
+        }else{
+             return redirect('/admin');
+        }
+    }
+
+    public function companyinfo($id)
+    {
+        $person =DB::table('masterfile')->find($id);
+        if ($person == true) {
+            return view('admin.manpower.companyinfo', compact('person'));
+        }else{
+             return redirect('/admin');
+        }
+    }
+
+
+    public function projectinfo($id)
+    {
+        $person =DB::table('masterfile')->find($id);
+        if ($person == true) {
+         
+            return view('admin.manpower.projectsinfo', compact('person'));
+        }else{
+             return redirect('/admin');
+        }
+    }
+
+    
+
+
+    public function uploaddocs(Request $request){
+
+      date_default_timezone_set("Asia/Manila");
+        $time = date("Y-m-d h:i");
+        $manpowerid = $request->input('manpowerid');
+
+
+      if (!empty($_FILES['image']['name'])) {
+
+        $image= addslashes($_FILES['image']['tmp_name']);
+        $name= addslashes($_FILES['image']['name']);
+        $image= file_get_contents($image);
+        $image= base64_encode($image);
+
+         $data = array("masterfile_id"=>$manpowerid,"imagename"=>$name,"imagefile"=>$image,"created_at"=>$time,"updated_at"=>$time);
+        db::table('manpowerdocs')->insert($data);
+
+        session()->flash('status', 'New Manpower Docs has been Successfully Added.');
+        return back();
+      }
+    }
+
+
+
+    public function others($id)
+    {
+        $person =DB::table('masterfile')->find($id);
+        if ($person == true) {
+           $manpowerdocs = DB::select("SELECT * FROM manpowerdocs WHERE masterfile_id='".$id."'");
+           return view('admin.manpower.others', compact('person','manpowerdocs'));
+        }else{
+             return redirect('/admin');
+        }
+    }
+
+
+
+
+        public function editpersonalinfo($id)
+    {
+    /*  $person = Manpower::find($id);*/
+      $person =DB::table('masterfile')->find($id);
+      if ($person == true) {
+        return view('admin.manpower.editpersonalinfo', compact('person'));
+      }else{
+         return redirect('/admin');
+      }
+  
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+

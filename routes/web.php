@@ -13,26 +13,25 @@
 
 
 
-/*NO RESTRICTIONS*/
-
+//NO RESTRICTIONS
 
 //Logout
 Auth::routes();
 Route::get('/logout', 'PagesController@logout')->name('logout')->middleware('authenticated');
-
 //Welcome Route
 Auth::routes();
 Route::get('/', 'PagesController@welcome');
-
 //Home Routes
 Auth::routes();
 Route::get('/home', 'PagesController@home')->name('home')->middleware('authenticated');
-
 //Search
 Auth::routes();
 Route::any('/search', 'PagesController@search')->middleware('authenticated');
 
-//View Manpower
+
+/*NON ADMINISTRATOR ROUTES*/
+
+//Manpower
 Auth::routes();
 Route::get('/personalinfo/{id}', 'ManpowerController@personalinfo')->middleware('authenticated');
 Auth::routes();
@@ -46,7 +45,16 @@ Route::get('/projectinfo/{id}', 'ManpowerController@projectinfo')->middleware('a
 Auth::routes();	
 Route::get('/Others/{id}', 'ManpowerController@others')->middleware('authenticated');
 
-//Admin Stuff
+/*END NON ADMIN ROUTES*/
+
+
+
+
+
+
+/*ADMINISTRATOR ROUTES*/
+
+//Login
 Auth::routes();
 Route::get('/admin/login', 'Auth\AdminLoginController@ShowLoginForm')->name('admin.login');
 Auth::routes();
@@ -56,6 +64,21 @@ Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.logi
 Auth::routes();
 Route::get('/admin', 'AdminController@index')->name('admin.dashboard'); 
 
+//Manpower
+Auth::routes();
+Route::get('/adminpersonalinfo/{id}', 'AdminController@personalinfo')->middleware('authenticated');
+Auth::routes();
+Route::get('/admineducationinfo/{id}', 'AdminController@educationinfo')->middleware('authenticated');
+Auth::routes();	
+Route::get('/admingoverninfo/{id}', 'AdminController@governinfo')->middleware('authenticated');
+Auth::routes();	
+Route::get('/admincompanyinfo/{id}', 'AdminController@companyinfo')->middleware('authenticated');
+Auth::routes();	
+Route::get('/adminprojectinfo/{id}', 'AdminController@projectinfo')->middleware('authenticated');
+Auth::routes();	
+Route::get('/adminOthers/{id}', 'AdminController@others')->middleware('authenticated');
+Auth::routes();	
+Route::any('/uploaddocs', 'AdminController@uploaddocs')->middleware('authenticated');
 
 
  
@@ -71,7 +94,12 @@ Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 //Admin Home Routes
 Auth::routes();
 Route::get('/adminhome', 'AdminController@adminhome')->name('adminhome')->middleware('authenticated');
+Auth::routes();
+Route::get('/adminlogout', 'AdminController@adminlogout')->name('adminlogout')->middleware('authenticated');
 
+//Event
+Auth::routes();
+Route::get('/event', 'AdminController@event')->middleware('authenticated');
 
 //PagesController
 Auth::routes();
@@ -130,3 +158,16 @@ Route::any('/uploadbanner', 'AlbumController@uploadbanner')->middleware('authent
 
 	}
 });*/
+
+
+
+
+
+
+/*END ADMINISTRATOR ROUTES*/
+
+
+
+
+
+
