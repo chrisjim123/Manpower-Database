@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
-use App\Manpower;
 use App\Masterfile;
 use App\Manpowerdocs;
 use Session;
@@ -93,56 +92,56 @@ public function event(){
 
 
 
-    public function personalinfo($id)
+    public function adminpersonalinfo($id)
     {
     /*  $person = Manpower::find($id);*/
       $person =DB::table('masterfile')->find($id);
       if ($person == true) {
-        return view('admin.manpower.personalinfo', compact('person'));
+        return view('admin.manpowerfiles.adminpersonalinfo', compact('person'));
       }else{
          return redirect('/admin');
       }
   
     }
 
-    public function educationinfo($id)  
+    public function admineducationinfo($id)  
     {
       $person =DB::table('masterfile')->find($id);
       if ($person == true) {
-        return view('admin.manpower.educationinfo', compact('person'));
+        return view('admin.manpowerfiles.admineducationinfo', compact('person'));
       }else{
          return redirect('/admin');
       }
 
     }
 
-    public function governinfo($id)
+    public function admingoverninfo($id)
     {
         $person =DB::table('masterfile')->find($id);
         if ($person == true) {
-            return view('admin.manpower.governinfo', compact('person'));
+            return view('admin.manpowerfiles.admingoverninfo', compact('person'));
         }else{
              return redirect('/admin');
         }
     }
 
-    public function companyinfo($id)
+    public function admincompanyinfo($id)
     {
         $person =DB::table('masterfile')->find($id);
         if ($person == true) {
-            return view('admin.manpower.companyinfo', compact('person'));
+            return view('admin.manpowerfiles.admincompanyinfo', compact('person'));
         }else{
              return redirect('/admin');
         }
     }
 
 
-    public function projectinfo($id)
+    public function adminprojectinfo($id)
     {
         $person =DB::table('masterfile')->find($id);
         if ($person == true) {
          
-            return view('admin.manpower.projectsinfo', compact('person'));
+            return view('admin.manpowerfiles.adminprojectsinfo', compact('person'));
         }else{
              return redirect('/admin');
         }
@@ -175,12 +174,12 @@ public function event(){
 
 
 
-    public function others($id)
+    public function adminothers($id)
     {
         $person =DB::table('masterfile')->find($id);
         if ($person == true) {
            $manpowerdocs = DB::select("SELECT * FROM manpowerdocs WHERE masterfile_id='".$id."'");
-           return view('admin.manpower.others', compact('person','manpowerdocs'));
+           return view('admin.manpowerfiles.adminothers', compact('person','manpowerdocs'));
         }else{
              return redirect('/admin');
         }
@@ -194,7 +193,7 @@ public function event(){
     /*  $person = Manpower::find($id);*/
       $person =DB::table('masterfile')->find($id);
       if ($person == true) {
-        return view('admin.manpower.editpersonalinfo', compact('person'));
+        return view('admin.manpowerfiles.editpersonalinfo', compact('person'));
       }else{
          return redirect('/admin');
       }

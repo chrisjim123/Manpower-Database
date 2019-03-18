@@ -320,82 +320,7 @@ $client->messages->create(
 
     }
 
-
-  /*   public function doimport(Request $request)
-    {
-
-           date_default_timezone_set("Asia/Manila");
-           $time = date("Y-m-d h:i");
-
-     //validate the xls file
-        $this->validate($request, array(
-            'file'      => 'required'
-        ));
-     
-        if($request->hasFile('file')){
-            $extension = File::extension($request->file->getClientOriginalName());
-            if ($extension == "xlsx" || $extension == "xls" || $extension == "csv") {
-     
-                $path = $request->file->getRealPath();
-                $data = Excel::load($path, function($reader) {
-                })->get();
-                if(!empty($data) && $data->count()){
-     
-
-              $name= 'default';
-              $image= file_get_contents('defaultimage.png');
-              $image= base64_encode($image);
-
-
-                foreach ($data as $key => $value) {
-                    $insert[] = [
-                    'firstname' => $value->firstname,
-                    'middlename' => $value->middlename,
-                    'lastname' => $value->lastname,
-                    'birthdate' => $value->birthdate,
-                    'place_of_birth' => $value->placeofbirth,
-                    'email' => $value->email,
-                    'address' => $value->address,
-                    'contact' => $value->contact,
-                    'created_at' => $time,
-                    'updated_at' => $time,
-                    'gender' => $value->gender,
-                    'imagefile' => $image,
-                    'imagename' => $name,
-                    ];
-                }
  
-                if(!empty($insert)){
- 
-                    $insertData = DB::table('Manpower')->insert($insert);
-                    if ($insertData) {
-                         session()->flash('status', 'New Data has successfully imported.');
-                          return back();
-                    }else {                        
-
-                        session()->flash('status', 'Error inserting the data..');
-                         return back();
-                    }
-                }
-            }
- 
-            return back();
- 
-        }else {
-
-            session()->flash('status', 'File is a '.$extension.' file.!! Please upload a valid xls/csv file..!!');
-             return back();
-        }
-    }
-
-
-    }
-
-*/
-
-    
-
-
 
 
 //Exporting Record
@@ -585,44 +510,7 @@ $client->messages->create(
     }
 
 
-
-
-/*
-public function resize_image($image, $max_resolution){
-
-  if(file_exists($image)){
-
-    $original_image = imagecreatefrompng($image);
-
-    //resolution
-    $original_width = imagesx($original_image);
-    $original_height = imagesy($original_image);
-
-    //try
-    $ratio = $max_resolution / $original_width;
-    $new_width = $max_resolution;
-    $new_height = $original_height*$ratio;
-
-    //if not working
-    if($new_height>$max_resolution){
-      $ratio = $max_resolution / $original_height;
-      $new_height = $max_resolution;
-      $new_width = $original_width*$ratio;
-    }
-
-    if($original_image){
-
-      $new_image = imagecreatetruecolor($new_width, $new_height);
-      imagecopyresampled($new, $ori, 0, 0, 0, 0, $ne, $new, $original_width, $original_height);
-
-      imagepng($new_image,$image,90);
-    }
-
-  }
-}
-
-*/
-
+ 
 
 public function updateprofilepicture(Request $request,$id) {
 
@@ -672,53 +560,6 @@ public function updateprofilepicture(Request $request,$id) {
        
     }elseif ($_FILES['image']['type'] == 'image/png') {  
 
-/*
-    $image= ($_FILES['image']['tmp_name']);
-    $max_resolution = '200';
-
-
-    $original_image = imagecreatefrompng($image);
-
-    //resolution
-    $original_width = imagesx($original_image);
-    $original_height = imagesy($original_image);
-
-    //try
-    $ratio = $max_resolution / $original_width;
-    $new_width = $max_resolution;
-    $new_height = $original_height*$ratio;
-
-    //if not working
-    if($new_height>$max_resolution){
-      $ratio = $max_resolution / $original_height;
-      $new_height = $max_resolution;
-      $new_width = $original_width*$ratio;
-    }elseif ($new_height<$max_resolution) {
-      $ratio = $max_resolution / $original_height;
-      $new_height = $max_resolution;
-      $new_width = $original_width*$ratio;
-    }
-
-    if($original_image){
-
-      $new_image = imagecreatetruecolor($new_width, $new_height);
-      imagecopyresampled($new_image, $original_image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
-
-      imagepng($new_image,$image,90);
-    }
-
-      $image= addslashes($_FILES['image']['tmp_name']);
-        $name= addslashes($_FILES['image']['name']);
-        $image= file_get_contents($image);
-        $image= base64_encode($image);
-
- 
-        Masterfile::where('id', '=', $id)->update(['imagefile' => $image, 'imagename' => $name]);
-        
-        session()->flash('status', 'Profile picture has been updated successfully.');
-        return back();
-  
-*/
         session()->flash('status', 'Please select only .jpg file type.');
         return back();
 

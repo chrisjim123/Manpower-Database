@@ -1,4 +1,5 @@
-@extends('layouts.guest')
+@extends('layouts.master')
+
 
 
 @section('contentheader')

@@ -52,8 +52,24 @@ Route::get('/Others/{id}', 'ManpowerController@others')->middleware('authenticat
 
 
 
+
+
+
+    // your routes
+
+
 /*ADMINISTRATOR ROUTES*/
 
+
+
+
+
+
+/*<!-- Route group -->*/
+/*Route::group(['middleware' => ['auth', 'Administrator']], function() {
+
+
+*/
 //Login
 Auth::routes();
 Route::get('/admin/login', 'Auth\AdminLoginController@ShowLoginForm')->name('admin.login');
@@ -64,33 +80,23 @@ Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.logi
 Auth::routes();
 Route::get('/admin', 'AdminController@index')->name('admin.dashboard'); 
 
+
 //Manpower
 Auth::routes();
-Route::get('/adminpersonalinfo/{id}', 'AdminController@personalinfo')->middleware('authenticated');
+Route::get('/adminpersonalinfo/{id}', 'AdminController@adminpersonalinfo')->middleware('authenticated');
 Auth::routes();
-Route::get('/admineducationinfo/{id}', 'AdminController@educationinfo')->middleware('authenticated');
+Route::get('/admineducationinfo/{id}', 'AdminController@admineducationinfo')->middleware('authenticated');
 Auth::routes();	
-Route::get('/admingoverninfo/{id}', 'AdminController@governinfo')->middleware('authenticated');
+Route::get('/admingoverninfo/{id}', 'AdminController@admingoverninfo')->middleware('authenticated');
 Auth::routes();	
-Route::get('/admincompanyinfo/{id}', 'AdminController@companyinfo')->middleware('authenticated');
+Route::get('/admincompanyinfo/{id}', 'AdminController@admincompanyinfo')->middleware('authenticated');
 Auth::routes();	
-Route::get('/adminprojectinfo/{id}', 'AdminController@projectinfo')->middleware('authenticated');
+Route::get('/adminprojectinfo/{id}', 'AdminController@adminprojectinfo')->middleware('authenticated');
 Auth::routes();	
-Route::get('/adminOthers/{id}', 'AdminController@others')->middleware('authenticated');
+Route::get('/adminOthers/{id}', 'AdminController@adminothers')->middleware('authenticated');
 Auth::routes();	
 Route::any('/uploaddocs', 'AdminController@uploaddocs')->middleware('authenticated');
 
-
- 
-/*<!-- Route group -->*/
-/*$router->group(['middleware' => 'auth'], function() {
-*/
-
-  /*  <!-- Admin Only -->*/
-/*    if(Auth::check()){
-        if ( Auth::user()->usertype == "Administrator" ){
-
-*/
 //Admin Home Routes
 Auth::routes();
 Route::get('/adminhome', 'AdminController@adminhome')->name('adminhome')->middleware('authenticated');
@@ -153,21 +159,10 @@ Route::any('/album', 'AlbumController@index')->middleware('authenticated');
 Auth::routes();	
 Route::any('/uploadbanner', 'AlbumController@uploadbanner')->middleware('authenticated');
 
-/*
-    }
-
-	}
-});*/
-
-
-
-
-
 
 /*END ADMINISTRATOR ROUTES*/
 
-
-
-
+/*});
+*/
 
 

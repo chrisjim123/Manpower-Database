@@ -1,4 +1,5 @@
-@extends('layouts.guest')
+@extends('layouts.master')
+
 
 
 @section('contentheader')
@@ -7,14 +8,14 @@
   <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Project Info
+            Educational Info
             <small>Preview</small>
           </h1>
 
 
        <ol class="breadcrumb">
             <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Personal Info</li>
+            <li class="active">Educational Info</li>
           </ol>
 
 
@@ -27,21 +28,19 @@
 @section('content')
 
 
-
         
 <?php
 function current_page($uri = "/") {
     return strstr(request()->path(), $uri);
 }
 ?>
+
+
  
- 
-   
     <div class="row">
         <div class="col-sm-10"><h1>{{$person->firstname}} {{$person->lastname}}</h1></div>
-<!-- <div class="col-sm-2"><a href="{{ url('/home')}}"  class="pull-right"><button class="btn btn-md btn-success"><i class="glyphicon glyphicon-home"  {{ (current_page("home")) ? 'class=active' : '' }}></i> Home</button></a></div>
- -->
-    <!--     <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" style="size:100px;" src="http://www.gravatar.com/avata?s=100"></a></div>
+<!--                 <div class="col-sm-2"><a href="{{ url('/home')}}"  class="pull-right"><button class="btn btn-md btn-success"><i class="glyphicon glyphicon-home"  {{ (current_page("home")) ? 'class=active' : '' }}></i> Home</button></a></div>
+ -->        <!-- <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" style="size:100px;" src="http://www.gravatar.com/avata?s=100"></a></div>
  -->    </div>
     <div class="row">
         <div class="col-sm-3"><!--left col-->
@@ -60,15 +59,15 @@ function current_page($uri = "/") {
             <div class="panel-body">None</div>
           </div>
           
-          
-<!--           <ul class="list-group">
+<!--           
+          <ul class="list-group">
             <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
-          </ul>  -->
-               
+          </ul> 
+                -->
           <div class="panel panel-default">
             <div class="panel-heading">Social Media</div>
             <div class="panel-body">
@@ -78,8 +77,8 @@ function current_page($uri = "/") {
           
         </div><!--/col-3-->
         <div class="col-sm-9">
-             <ul class="nav nav-tabs">
-
+            <ul class="nav nav-tabs">
+        
                 <li {{ (current_page("personalinfo")) ? 'class=active' : '' }}><a href="{{ url('/adminpersonalinfo')}}/{{$person->id}}">Basic Info</a></li>
                
                 <li {{ (current_page("educationinfo")) ? 'class=active' : '' }}><a href="{{ url('/admineducationinfo')}}/{{$person->id}}">Educational Info</a></li>
@@ -87,106 +86,70 @@ function current_page($uri = "/") {
                 <li {{ (current_page("governinfo")) ? 'class=active' : '' }}><a href="{{ url('/admingoverninfo')}}/{{$person->id}}">Government Info</a></li>
  
                 <li {{ (current_page("companyinfo")) ? 'class=active' : '' }}><a href="{{ url('/admincompanyinfo')}}/{{$person->id}}">Company Info</a></li>
-
+                
                 <li {{ (current_page("projectinfo")) ? 'class=active' : '' }}><a href="{{ url('/adminprojectinfo')}}/{{$person->id}}">Projects Info</a></li>
 
                 <li {{ (current_page("Others")) ? 'class=active' : '' }}><a href="{{ url('/adminOthers')}}/{{$person->id}}">Others</a></li>
 
               </ul>
 
-                  <hr>
- 
-
-
-<div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Project List</h3>
-                  <div class="box-tools">
-                    <div class="input-group" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
-                      <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>Nos.</th>
-                      <th>Status</th>
-                      <th>Project Name</th>
-                      <th>Training Date</th>
-                      <th>Break Date</th>
-                      <th>Project Duration</th>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td><span class="label label-primary">Ongoing</span></td>
-                      <td>Nescafe BA On Aisle 2019</td>
-                      <td>12-27-2019</td>
-                      <td>01-23-2019</td>
-                      <!-- <td><span class="label label-success">Approved</span></td> -->
-                      <td>January-June 2019</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td><span class="label label-primary">Ongoing</span></td>
-                      <td>Nescafe Classic Strong 2019</td>
-                      <td>12-27-2019</td>
-                      <td>01-23-2019</td>
-                      <!-- <td><span class="label label-success">Approved</span></td> -->
-                      <td>January-June 2019</td>
-
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td><span class="label label-primary">Ongoing</span></td>
-                      <td>Barangay Swap Sarap 2019</td>
-                      <td>12-27-2019</td>
-                      <td>01-23-2019</td>
-                      <!-- <td><span class="label label-success">Approved</span></td> -->
-                      <td>January-June 2019</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td><span class="label label-primary">Ongoing</span></td>
-                      <td>Nescafe Suki Seller 2019</td>
-                      <td>12-27-2019</td>
-                      <td>01-23-2019</td>
-                      <td>January-June 2019</td>
-                    </tr>
-                  </table>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div>
-          </div>
-
-
-
-
-
-
-
-
-
-<!--  -->
-
-<!-- 
+               <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
                       <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>Elementary School</h4></label>
+                              <input style="border:none; background:white;" disabled="" value="{{$person->elem_school}}" type="text" class="form-control" name="first_name" id="first_name" placeholder="None">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>S.Y. Graduated</h4></label>
+                              <input style="border:none; background:white;" disabled="" value="{{$person->elemgrad}}" type="text" class="form-control" name="last_name" id="last_name" placeholder="None">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>High School</h4></label>
+                              <input style="border:none; background:white;" disabled="" value="{{$person->highschool}}" type="text" class="form-control" name="phone" id="phone" placeholder="None">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>S.Y. Graduated</h4></label>
+                              <input style="border:none; background:white;" disabled="" value="{{$person->hsgrad}}" type="text" class="form-control" name="mobile" id="mobile" placeholder="None">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>College</h4></label>
+                              <input style="border:none; background:white;" disabled="" value="{{$person->college}}" type="email" class="form-control" name="email" id="email" placeholder="None">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>S.Y. Graduated</h4></label>
+                              <input style="border:none; background:white;" disabled="" value="{{$person->collegegrad}}" type="email" class="form-control" id="location" placeholder="None">
+                          </div>
+                      </div>
+                      
+                   <!--    <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
                                 <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-edit"></i> Edit</button>
                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                             </div>
                       </div> -->
-       
-
-
-
-              </div>
+                </form>
+               
+     
+                </div>
                
               </div><!--/tab-pane-->
           </div><!--/tab-content-->
@@ -195,7 +158,10 @@ function current_page($uri = "/") {
     </div><!--/row-->
                                                       
 
+
+ 
 @endsection
+
 
 
 
